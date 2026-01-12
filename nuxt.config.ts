@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
     extends: ['docus'],
 
+    srcDir: 'app/',
+
     compatibilityDate: '2024-11-01',
 
     telemetry: false,
