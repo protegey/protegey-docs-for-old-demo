@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AuthLayout from '~/layouts/AuthLayout.vue'
+
 definePageMeta({
   middleware: [],  // Disable all middleware
   layout: false,
@@ -42,28 +44,32 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-md w-full text-center space-y-4">
-      <div v-if="loading" class="space-y-4">
-        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-        <p class="text-gray-600 dark:text-gray-400">Completing sign in...</p>
+  <AuthLayout title="Completing sign in" description="Please wait while we authenticate you">
+    <div class="flex flex-col items-center justify-center space-y-4 py-8">
+      <div v-if="loading" class="space-y-4 text-center">
+        <div class="flex justify-center">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+        </div>
+        <p class="text-sm text-muted-foreground">Completing sign in...</p>
       </div>
 
-      <div v-else-if="error" class="space-y-4">
-        <div class="text-red-600 dark:text-red-400">
+      <div v-else-if="error" class="space-y-4 text-center">
+        <div class="text-destructive">
           <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Authentication Failed</h2>
-        <p class="text-gray-600 dark:text-gray-400">{{ error }}</p>
-        <a
-          href="/login"
-          class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+        <div class="space-y-2">
+          <h2 class="text-lg font-semibold">Authentication Failed</h2>
+          <p class="text-sm text-muted-foreground">{{ error }}</p>
+        </div>
+        <NuxtLink
+          to="/login"
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
         >
           Try Again
-        </a>
+        </NuxtLink>
       </div>
     </div>
-  </div>
+  </AuthLayout>
 </template>
