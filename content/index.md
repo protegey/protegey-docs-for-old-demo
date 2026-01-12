@@ -1,12 +1,12 @@
 ---
 seo:
-  title: Centry - Fraud Intelligence Platform
+  title: Protegey - Fraud Intelligence Platform
   description: Trust-based fraud intelligence network for financial institutions, fintechs, and telcos
 ---
 
 ::u-page-hero
 #title
-Centry / Protegey
+Protegey
 
 #description
 Trust-based fraud intelligence platform that enables financial institutions to share signals and detect fraud collaboratively.

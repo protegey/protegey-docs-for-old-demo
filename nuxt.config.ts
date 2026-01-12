@@ -8,11 +8,7 @@ export default defineNuxtConfig({
 
     telemetry: false,
 
-    modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "shadcn-nuxt"],
-
-    shadcn: {
-        componentDir: "app/components/ui",
-    },
+    modules: ["@nuxt/content"],
 
     future: {
         compatibilityVersion: 4,
@@ -45,7 +41,7 @@ export default defineNuxtConfig({
                 {
                     name: "description",
                     content:
-                        "Centry / Protegey - Fraud Intelligence Platform Documentation",
+                        "Protegey - Fraud Intelligence Platform Documentation",
                 },
             ],
         },
