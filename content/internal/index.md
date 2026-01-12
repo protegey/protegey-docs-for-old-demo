@@ -1,0 +1,76 @@
+---
+title: Internal Documentation
+description: Internal system documentation for Protegey team
+navigation: false
+---
+
+# Internal Documentation
+
+::callout{icon="i-lucide-lock" color="red"}
+**RESTRICTED**: This documentation is for Protegey team members only.
+::
+
+This section contains sensitive technical information about Protegey's internal systems, operations, and security measures.
+
+## Access Control
+
+Access to this documentation requires:
+
+- Active Protegey team member status
+- Appropriate role-based permissions
+- VPN connection (for remote access)
+
+## Documentation Sections
+
+### Architecture
+- System diagrams and infrastructure
+- Trust weighting algorithms
+- Signal fusion models
+- Database schemas
+
+### Detection
+- Scoring mechanics and thresholds
+- False positive tuning procedures
+- Partner trust decay rules
+- Machine learning model details
+
+### Operations
+- Incident response playbooks
+- Law enforcement cooperation workflows
+- Emergency system controls
+- Disaster recovery procedures
+
+### Partners
+- Partner risk profiles and assessments
+- Manual override procedures
+- Compliance audit notes
+- Partner trust scores
+
+### Security
+- Penetration test results
+- Vulnerability management
+- Access control policies
+- Encryption key management
+
+## Security Notice
+
+All information in this section is **confidential and proprietary**. Unauthorized access, disclosure, or distribution is strictly prohibited and may result in:
+
+- Immediate termination
+- Legal action
+- Criminal prosecution
+
+## Reporting Security Issues
+
+If you discover a security vulnerability:
+
+1. **Do not** disclose publicly
+2. Email [security@protegey.com](mailto:security@protegey.com) immediately
+3. Include detailed reproduction steps
+4. Use PGP encryption for sensitive details
+
+## Contact
+
+For access issues or questions:
+- **Slack**: #internal-docs
+- **Email**: [internal@protegey.com](mailto:internal@protegey.com)
