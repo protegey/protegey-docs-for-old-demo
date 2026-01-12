@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AuthLayout from '~/layouts/AuthLayout.vue'
-import { Button } from '~/components/ui/button'
 import { ArrowRight } from 'lucide-vue-next'
 
 definePageMeta({
@@ -14,7 +13,7 @@ const route = useRoute()
 const redirectToLogin = () => {
   // Get the redirect URL from query params or default to docs home
   const returnUrl = (route.query.redirect as string) || window.location.origin
-  
+
   // Redirect to Laravel login page with return URL pointing to docs site
   const loginUrl = `${config.public.apiBase}/auth/partner/login?redirect_url=${encodeURIComponent(returnUrl)}`
   window.location.href = loginUrl
@@ -24,10 +23,12 @@ const redirectToLogin = () => {
 <template>
   <AuthLayout title="Welcome back" description="Sign in to access partner documentation">
     <div class="grid gap-6">
-      <Button class="w-full" @click="redirectToLogin">
+      <button
+        class="w-full inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        @click="redirectToLogin">
         Sign in with Partner Account
         <ArrowRight class="ml-2 h-4 w-4" />
-      </Button>
+      </button>
 
       <div class="relative">
         <div class="absolute inset-0 flex items-center">

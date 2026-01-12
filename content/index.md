@@ -1,41 +1,54 @@
 ---
 seo:
-  title: Protegey - Fraud Intelligence Platform
-  description: Trust-based fraud intelligence network for financial institutions, fintechs, and telcos
+  title: Centry - Collective Defence Against Fraud
+  description: The fraud intelligence network for financial institutions, fintechs, and telcos. Powered by Protegey.
 ---
 
 ::u-page-hero
 #title
-Protegey
+Collective Defence
+<br>Against <span class="text-primary">Fraud</span>
 
 #description
-Trust-based fraud intelligence platform that enables financial institutions to share signals and detect fraud collaboratively.
+Centry is the fraud intelligence network that enables financial institutions to securely share risk signals. Stop fighting in silos. Start fighting together.
 
 #links
   :::u-button
   ---
   color: primary
   size: xl
-  to: /overview/what-is-protegey
+  to: /overview
   trailing-icon: i-lucide-arrow-right
   ---
-  Get started
+  Explore the Platform
   :::
 
   :::u-button
   ---
   color: neutral
   size: xl
-  to: /getting-started
+  to: /getting-started/onboarding
   variant: outline
+  trailing-icon: i-lucide-users
   ---
-  Partner Onboarding
+  Become a Partner
+  :::
+
+  :::u-button
+  ---
+  color: gray
+  size: xl
+  to: /login
+  variant: ghost
+  trailing-icon: i-lucide-log-in
+  ---
+  Partner Portal
   :::
 ::
 
 ::u-page-section
 #title
-Platform Overview
+Why Centry?
 
 #features
   :::u-page-feature
@@ -43,43 +56,23 @@ Platform Overview
   icon: i-lucide-shield-check
   ---
   #title
-  Trust-Based Intelligence
+  Network Immunity
   
   #description
-  Collaborative fraud detection through secure signal sharing across trusted partners.
+  When one partner detects a threat, the entire network is immunized instantly.
+  [Learn about Network Effects](/platform/network-effects)
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-network
+  icon: i-lucide-eye-off
   ---
   #title
-  Network Effects
+  Privacy by Design
   
   #description
-  The more partners participate, the stronger the fraud detection becomes.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-lock
-  ---
-  #title
-  Security & Privacy
-  
-  #description
-  Enterprise-grade encryption and data isolation ensure partner confidentiality.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-scale
-  ---
-  #title
-  Regulatory Compliance
-  
-  #description
-  Designed to support AML/KYC requirements without replacing existing systems.
+  Share intelligence, not customer secrets. We use advanced cryptography to protect PII.
+  [See Security Principles](/security/principles)
   :::
 
   :::u-page-feature
@@ -87,20 +80,68 @@ Platform Overview
   icon: i-lucide-zap
   ---
   #title
-  Real-Time Detection
+  Real-Time Decisioning
   
   #description
-  Instant fraud risk assessment powered by collective intelligence.
+  Sub-second risk scores designed for the critical path of signup and transaction flows.
+  [View API Overview](/api/overview)
+  :::
+::
+
+::u-page-section
+#title
+Trusted by Regulated Leaders
+
+#description
+Our partners include top-tier banks, innovative fintechs, and major telecommunications providers.
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-building-2
+  ---
+  #title
+  Financial Institutions
+  
+  #description
+  Prevent synthetic identity fraud and account takeovers.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-users
+  icon: i-lucide-smartphone
   ---
   #title
-  Partner Ecosystem
+  Telcos
   
   #description
-  Join a growing network of banks, fintechs, and telcos fighting fraud together.
+  Stop subscription fraud and device trafficking rings.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-credit-card
+  ---
+  #title
+  Lenders
+  
+  #description
+  Detect loan stacking and bust-out fraud before it happens.
+  :::
+::
+
+::u-page-cta
+#title
+Ready to join the network?
+#description
+Access is restricted to verified, regulated entities. Apply for access today.
+#links
+  :::u-button
+  ---
+  to: /getting-started/onboarding
+  color: primary
+  size: lg
+  ---
+  Start Verification
   :::
 ::
