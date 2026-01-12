@@ -1,0 +1,63 @@
+---
+title: Platform Architecture
+description: Conceptual overview of the Centry system
+navigation:
+  title: Platform
+---
+
+# Platform Architecture
+
+Centry is architected as a **secure, distributed signal exchange**. It connects disparate financial institutions into a unified intelligence network while maintaining strict data isolation and privacy.
+
+## High-Level Concept
+
+The platform operates on a hub-and-spoke model:
+
+1. **Spokes (Partners)**: Financial institutions run their own fraud detection stacks. They communicate with Centry via secure API.
+2. **Hub (Centry Core)**: The central brain that ingests signals, normalizes data, and computes network-wide risk scores.
+
+::callout{icon="i-lucide-network" color="gray"}
+**Visualizing the Network**: Imagine a real-time immune system where antibodies (fraud signals) developed by one organ (a bank) are instantly available to protect the entire body (the financial system).
+::
+
+## Core Components
+
+### 1. The Signal Ingestion Engine
+A high-throughput ingestion layer that accepts risk signals from partners. It performs:
+- **Validation**: Ensuring data conforms to schema without PII leakage.
+- **Normalization**: Mapping partner-specific codes to standard fraud typologies.
+- **Anonymization**: Hashing sensitive identifiers before storage.
+
+### 2. The Fusion Layer
+This is where the magic happens. The Fusion Layer combines:
+- **Direct Signals**: "Partner A says this IP is bad."
+- **Network History**: "This IP has been seen 50 times in 1 hour."
+- **Velocity Patterns**: "This identity is moving too fast across the network."
+- **Third-Party Enrichment**: "This IP belongs to a known hosting provider."
+
+### 3. The Trust Engine
+Not all signals are equal. The Trust Engine weights signals based on:
+- **Partner Reliability**: Does this partner have a history of high-accuracy reporting?
+- **Signal Freshness**: Recent signals carry more weight than old ones.
+- ** corroboration**: Is this signal confirmed by multiple independent partners?
+
+## Data Isolation Architecture
+
+To ensure security and privacy:
+
+- **Logical Separation**: Partner data is logically isolated. A partner can never query the raw database or see another partner's raw signals.
+- **Aggregated Responses**: Partners receive *scores* and *aggregated flags* (e.g., "Network Risk: High"), not specific details like "Bank of America flagged this."
+- ** ephemeral Processing**: Sensitive PII used for matching is hashed or processed in memory and never persisted in raw form.
+
+## Scalability & Performance
+
+Centry is built for **sub-second decisioning**.
+- **Latency**: <200ms for p95 requests.
+- **Throughput**: Capable of handling peaks from major card issuers and payment processors.
+- **Availability**: 99.99% uptime SLA for production partners.
+
+## Learn More
+
+- [Signal Intelligence](/platform/signal-intelligence) - How we turn data into insight
+- [Network Effects](/platform/network-effects) - Why the network gets smarter over time
+- [Data Lifecycle](/platform/data-lifecycle) - How we handle data from ingestion to deletion
