@@ -1,43 +1,53 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    extends: ['docus'],
+    extends: ["docus"],
 
-    srcDir: 'app/',
+    srcDir: "app/",
 
-    compatibilityDate: '2024-11-01',
+    compatibilityDate: "2024-11-01",
 
     telemetry: false,
 
+    modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "shadcn-nuxt"],
+
+    shadcn: {
+        componentDir: "app/components/ui",
+    },
+
     future: {
-        compatibilityVersion: 4
+        compatibilityVersion: 4,
     },
 
     router: {
         options: {
-            strict: true
-        }
+            strict: true,
+        },
     },
 
     // Disable SSR for protected routes to ensure middleware runs client-side
     routeRules: {
-        '/partners/**': { ssr: false },
-        '/internal/**': { ssr: false }
+        "/partners/**": { ssr: false },
+        "/internal/**": { ssr: false },
     },
 
     runtimeConfig: {
         public: {
-            apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:8000',
-        }
+            apiBase: process.env.NUXT_PUBLIC_API_BASE || "http://localhost:8000",
+        },
     },
 
     app: {
         head: {
-            title: 'Protegey Documentation',
+            title: "Protegey Documentation",
             meta: [
-                { charset: 'utf-8' },
-                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-                { name: 'description', content: 'Centry / Protegey - Fraud Intelligence Platform Documentation' }
-            ]
-        }
-    }
-})
+                { charset: "utf-8" },
+                { name: "viewport", content: "width=device-width, initial-scale=1" },
+                {
+                    name: "description",
+                    content:
+                        "Centry / Protegey - Fraud Intelligence Platform Documentation",
+                },
+            ],
+        },
+    },
+});
