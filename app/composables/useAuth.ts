@@ -1,4 +1,4 @@
-import type { User, AuthState } from '~/types/auth'
+import type { User, AuthState, PartnerStage, PartnerAccessLevel } from '~/types/auth'
 
 export const useAuth = () => {
     const config = useRuntimeConfig()
@@ -51,12 +51,92 @@ export const useAuth = () => {
         return user.value.roles.includes(role as any)
     }
 
+    /**
+     * Determine partner stage from user data
+     */
+    const determinePartnerStage = (userData: any): PartnerStage | undefined => {
+        if (!userData?.partner) return undefined
+
+        // Check for explicit stage from backend
+        if (userData.partner.stage) {
+            return userData.partner.stage as PartnerStage
+        }
+
+        // Infer stage from partner data
+        const hasProductionAccess = userData.partner.has_production_access ?? false
+        const hasSandboxAccess = userData.partner.has_sandbox_access ?? true // Default to sandbox
+        const isApproved = userData.partner.is_approved ?? false
+
+        if (hasProductionAccess && isApproved) {
+            return 'live'
+        } else if (isApproved && !hasProductionAccess) {
+            return 'pre-production'
+        } else if (hasSandboxAccess) {
+            return 'sandbox'
+        }
+
+        return 'discovery'
+    }
+
+    /**
+     * Computed properties for access levels
+     */
+    const hasSandboxAccess = computed(() => {
+        if (isInternal.value) return true
+        if (!isPartner.value) return false
+        return user.value?.hasSandboxAccess ?? false
+    })
+
+    const hasProductionAccess = computed(() => {
+        if (isInternal.value) return true
+        if (!isPartner.value) return false
+        return user.value?.hasProductionAccess ?? false
+    })
+
+    const partnerStage = computed(() => user.value?.partnerStage)
+
+    /**
+     * Granular access control
+     */
     const canAccessPartnerDocs = computed(() => {
         return isPartner.value || isInternal.value
     })
 
     const canAccessInternalDocs = computed(() => {
         return isInternal.value
+    })
+
+    const canAccessSandboxDocs = computed(() => {
+        return hasSandboxAccess.value
+    })
+
+    const canAccessProductionDocs = computed(() => {
+        return hasProductionAccess.value
+    })
+
+    const canAccessApiReference = computed(() => {
+        // API reference requires production access
+        return hasProductionAccess.value
+    })
+
+    const canAccessOperationalGuides = computed(() => {
+        // Operational guides require at least pre-production stage
+        if (isInternal.value) return true
+        if (!isPartner.value) return false
+        const stage = partnerStage.value
+        return stage === 'pre-production' || stage === 'live'
+    })
+
+    /**
+     * Get access level summary
+     */
+    const getAccessLevel = computed((): PartnerAccessLevel => {
+        return {
+            canAccessSandboxDocs: canAccessSandboxDocs.value,
+            canAccessProductionDocs: canAccessProductionDocs.value,
+            canAccessApiReference: canAccessApiReference.value,
+            canAccessOperationalGuides: canAccessOperationalGuides.value,
+        }
     })
 
     const login = async (email: string, password: string) => {
@@ -135,14 +215,28 @@ export const useAuth = () => {
             })
 
             // Map the partner portal user to our auth user format
+            const partnerStage = determinePartnerStage(data)
+            const hasSandbox = data.partner?.has_sandbox_access ?? true
+            const hasProduction = data.partner?.has_production_access ?? false
+
+            // Determine roles based on access levels
+            const roles: any[] = []
+            if (data.partner) {
+                if (hasSandbox) roles.push('partner:sandbox')
+                if (hasProduction) roles.push('partner:production')
+            }
+
             user.value = {
                 id: data.id,
                 email: data.email,
                 name: data.name,
-                roles: data.partner ? ['partner:production'] : [],
+                roles,
                 isPartner: !!data.partner,
                 isInternal: data.roles?.some((r: any) => ['super_admin', 'admin'].includes(r.name)) ?? false,
-                partnerTier: data.partner?.tier || 'starter'
+                partnerTier: data.partner?.tier || 'starter',
+                partnerStage,
+                hasSandboxAccess: hasSandbox,
+                hasProductionAccess: hasProduction,
             }
         } catch (error) {
             console.error('Failed to fetch user:', error)
@@ -167,8 +261,16 @@ export const useAuth = () => {
         isPartner,
         isInternal,
         hasRole,
+        hasSandboxAccess,
+        hasProductionAccess,
+        partnerStage,
         canAccessPartnerDocs,
         canAccessInternalDocs,
+        canAccessSandboxDocs,
+        canAccessProductionDocs,
+        canAccessApiReference,
+        canAccessOperationalGuides,
+        getAccessLevel,
         setToken,
         setUser,
         login,
