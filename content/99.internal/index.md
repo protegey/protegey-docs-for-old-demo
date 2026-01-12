@@ -1,7 +1,8 @@
 ---
 title: Internal Documentation
 description: Internal system documentation for Protegey team
-navigation: false
+navigation:
+  title: Internal
 ---
 
 # Internal Documentation

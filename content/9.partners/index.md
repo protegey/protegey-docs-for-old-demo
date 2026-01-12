@@ -1,7 +1,8 @@
 ---
 title: Welcome
 description: Partner documentation for Centry integration
-navigation: false
+navigation:
+  title: Partners
 ---
 
 # Partner Documentation
