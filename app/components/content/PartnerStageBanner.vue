@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useAuth } from '../../composables/useAuth'
+
 const { partnerStage, canAccessProductionDocs } = useAuth()
 
 const stageConfig = computed(() => {

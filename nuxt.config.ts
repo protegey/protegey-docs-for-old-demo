@@ -41,7 +41,7 @@ export default defineNuxtConfig({
                 {
                     name: "description",
                     content:
-                        "Protegey - Fraud Intelligence Platform Documentation",
+                        "Protegey - Real-time fraud intelligence for modern infrastructure.",
                 },
             ],
         },

@@ -1,7 +1,9 @@
+import { defineAppConfig } from "nuxt/app";
+
 export default defineAppConfig({
     docus: {
         title: 'Protegey Documentation',
-        description: 'The fraud intelligence network powered by Centry', // Adjusted description to bridge the gap
+        description: 'Real-time fraud intelligence for modern infrastructure.',
 
         url: 'https://docs.protegey.com',
 

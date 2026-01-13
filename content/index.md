@@ -1,7 +1,7 @@
 ---
 seo:
   title: Protegey - Collective Defence Against Fraud
-  description: The fraud intelligence network for financial institutions, fintechs, and telcos. Powered by Protegey.
+  description: The fraud intelligence network for financial institutions, fintechs, and telcos.
 ---
 
 ::u-page-hero
