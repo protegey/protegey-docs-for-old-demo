@@ -4,6 +4,14 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
     extends: ["docus"],
 
+    experimental: {
+        defaults: {
+            nuxtLink: {
+                trailingSlash: 'append',
+            },
+        },
+    },
+
     docus: {
         title: "Protegey Documentation",
         description: "Real-time fraud intelligence for modern infrastructure.",
