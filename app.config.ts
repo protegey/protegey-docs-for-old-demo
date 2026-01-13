@@ -1,7 +1,7 @@
 export default defineAppConfig({
     docus: {
         title: 'Protegey Documentation',
-        description: 'The fraud intelligence network powered by Protegey',
+        description: 'The fraud intelligence network powered by Centry', // Adjusted description to bridge the gap
 
         url: 'https://docs.protegey.com',
 
