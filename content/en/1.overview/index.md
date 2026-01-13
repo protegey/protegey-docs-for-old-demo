@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Introduction to Protegey/Protegey - The Fraud Intelligence Platform
+description: Introduction to Protegey - The Fraud Intelligence Platform
 navigation:
   title: Overview
 ---
