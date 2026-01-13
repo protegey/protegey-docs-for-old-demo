@@ -1,6 +1,23 @@
+import { defineNuxtConfig } from "nuxt/config";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     extends: ["docus"],
+
+    docus: {
+        title: "Protegey Documentation",
+        description: "Real-time fraud intelligence for modern infrastructure.",
+        url: "https://docs.protegey.com",
+        socials: {
+            github: "protegey",
+            twitter: "protegey",
+        },
+        header: {
+            title: "Protegey Docs",
+            logo: false,
+            showLinkIcon: true,
+        },
+    },
 
     srcDir: "app/",
 
@@ -8,7 +25,17 @@ export default defineNuxtConfig({
 
     telemetry: false,
 
-    modules: ["@nuxt/content"],
+    modules: ["@nuxt/content", "@nuxt/i18n"],
+
+    i18n: {
+        locales: [
+            { code: "en", name: "English", file: "en.json" },
+            { code: "fr", name: "Français", file: "fr.json" },
+            { code: "ar", name: "العربية", file: "ar.json" },
+        ],
+        defaultLocale: "fr",
+        strategy: "prefix",
+    },
 
     future: {
         compatibilityVersion: 4,

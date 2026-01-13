@@ -1,147 +1,144 @@
 ---
-seo:
-  title: Protegey - Collective Defence Against Fraud
-  description: The fraud intelligence network for financial institutions, fintechs, and telcos.
+title: Protegey - Collective Defence Against Fraud
+description: Secure fraud intelligence network for financial institutions, fintechs, and telcos.
+layout: page
 ---
 
 ::u-page-hero
+---
+ui:
+  title: "text-5xl font-bold tracking-tight"
+---
 #title
-Collective Defence
-<br>Against <span class="text-primary">Fraud</span>
+Collective Defence <br />Against <span class="text-primary">Financial Fraud</span>
 
 #description
-Protegey is the fraud intelligence network that enables financial institutions to securely share risk signals. Stop fighting in silos. Start fighting together.
+Protegey is the privacy-preserving intelligence layer for the global financial ecosystem. Share risk signals securely, identify malicious actors instantly, and protect your institution with network-level immunity.
 
 #links
   :::u-button
   ---
   color: primary
   size: xl
-  to: /overview
+  to: /getting-started/onboarding
+  icon: i-lucide-shield-plus
+  ---
+  Join the Network
+  :::
+
+  :::u-button
+  ---
+  color: white
+  size: xl
+  to: /platform/architecture
+  variant: ghost
   trailing-icon: i-lucide-arrow-right
   ---
-  Explore the Platform
-  :::
-
-  :::u-button
-  ---
-  color: neutral
-  size: xl
-  to: /getting-started/onboarding
-  variant: outline
-  trailing-icon: i-lucide-users
-  ---
-  Become a Partner
-  :::
-
-  :::u-button
-  ---
-  color: gray
-  size: xl
-  to: /login
-  variant: ghost
-  trailing-icon: i-lucide-log-in
-  ---
-  Partner Portal
+  How it Works
   :::
 ::
 
-::u-page-section
+::u-page-section{class="border-y border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50"}
 #title
-Why Protegey?
+Modern Intelligence for Regulated Sectors
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-shield-check
+  icon: i-lucide-refresh-cw
   ---
   #title
   Network Immunity
-  
   #description
-  When one partner detects a threat, the entire network is immunized instantly.
-  [Learn about Network Effects](/platform/network-effects)
+  When a fraud pattern is identified by one partner, the entire network is immunized in <50ms. 
+  
+  [Explore our Network Effects →](/platform/network-effects){.text-primary .text-sm .font-medium}
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-eye-off
+  icon: i-lucide-lock
   ---
   #title
-  Privacy by Design
-  
+  Zero-Knowledge Sharing
   #description
-  Share intelligence, not customer secrets. We use advanced cryptography to protect PII.
-  [See Security Principles](/security/principles)
+  Leverage advanced hashing and homomorphic encryption to share risk signals without ever exposing PII.
+  
+  [Security Whitepaper →](/security/principles){.text-primary .text-sm .font-medium}
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-zap
+  icon: i-lucide-bar-chart-3
   ---
   #title
-  Real-Time Decisioning
-  
+  Cross-Sector Signals
   #description
-  Sub-second risk scores designed for the critical path of signup and transaction flows.
-  [View API Overview](/api/overview)
+  Bridge the gap between Telcos and Banks. Detect SIM-swaps and synthetic IDs before they hit your ledger.
+  
+  [View Signal Catalog →](/api/signals){.text-primary .text-sm .font-medium}
   :::
 ::
 
 ::u-page-section
 #title
-Trusted by Regulated Leaders
+A Unified Shield for the Critical Path
 
 #description
-Our partners include top-tier banks, innovative fintechs, and major telecommunications providers.
+Integrate Protegey directly into your highest-risk flows.
 
-#features
-  :::u-page-feature
+::u-page-grid
+  :::u-page-card
   ---
-  icon: i-lucide-building-2
+  icon: i-lucide-user-plus
+  title: Account Opening
+  description: Stop synthetic identities and "mule" accounts during the KYC/Onboarding process.
   ---
-  #title
-  Financial Institutions
-  
-  #description
-  Prevent synthetic identity fraud and account takeovers.
   :::
 
-  :::u-page-feature
+  :::u-page-card
   ---
-  icon: i-lucide-smartphone
+  icon: i-lucide-send
+  title: Real-Time Payments
+  description: Score transactions against global fraud markers before funds leave the account.
   ---
-  #title
-  Telcos
-  
-  #description
-  Stop subscription fraud and device trafficking rings.
   :::
 
-  :::u-page-feature
+  :::u-page-card
   ---
-  icon: i-lucide-credit-card
+  icon: i-lucide-key
+  title: Authentication
+  description: Detect account takeover (ATO) by identifying high-risk device and network anomalies.
   ---
-  #title
-  Lenders
-  
-  #description
-  Detect loan stacking and bust-out fraud before it happens.
   :::
 ::
 
 ::u-page-cta
+---
+card: true
+---
 #title
-Ready to join the network?
+Verify Your Institution
 #description
-Access is restricted to verified, regulated entities. Apply for access today.
+Protegey is a gated network. Membership is exclusively available to verified financial institutions and regulated service providers.
 #links
   :::u-button
   ---
   to: /getting-started/onboarding
   color: primary
   size: lg
+  icon: i-lucide-check-circle
   ---
-  Start Verification
+  Apply for Access
+  :::
+  
+  :::u-button
+  ---
+  to: /contact
+  color: gray
+  variant: ghost
+  size: lg
+  ---
+  Talk to Sales
   :::
 ::

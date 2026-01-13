@@ -13,7 +13,7 @@ export default defineAppConfig({
         },
 
         header: {
-            title: 'Protegey',
+            title: 'Protegey Docs',
             logo: true,
             showLinkIcon: true
         },
