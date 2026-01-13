@@ -1,20 +1,20 @@
 ---
 title: Platform Architecture
-description: Conceptual overview of the Centry system
+description: Conceptual overview of the Protegey system
 navigation:
   title: Platform
 ---
 
 # Platform Architecture
 
-Centry is architected as a **secure, distributed signal exchange**. It connects disparate financial institutions into a unified intelligence network while maintaining strict data isolation and privacy.
+Protegey is architected as a **secure, distributed signal exchange**. It connects disparate financial institutions into a unified intelligence network while maintaining strict data isolation and privacy.
 
 ## High-Level Concept
 
 The platform operates on a hub-and-spoke model:
 
-1. **Spokes (Partners)**: Financial institutions run their own fraud detection stacks. They communicate with Centry via secure API.
-2. **Hub (Centry Core)**: The central brain that ingests signals, normalizes data, and computes network-wide risk scores.
+1. **Spokes (Partners)**: Financial institutions run their own fraud detection stacks. They communicate with Protegey via secure API.
+2. **Hub (Protegey Core)**: The central brain that ingests signals, normalizes data, and computes network-wide risk scores.
 
 ::callout{icon="i-lucide-network" color="gray"}
 **Visualizing the Network**: Imagine a real-time immune system where antibodies (fraud signals) developed by one organ (a bank) are instantly available to protect the entire body (the financial system).
@@ -51,7 +51,7 @@ To ensure security and privacy:
 
 ## Scalability & Performance
 
-Centry is built for **sub-second decisioning**.
+Protegey is built for **sub-second decisioning**.
 - **Latency**: <200ms for p95 requests.
 - **Throughput**: Capable of handling peaks from major card issuers and payment processors.
 - **Availability**: 99.99% uptime SLA for production partners.

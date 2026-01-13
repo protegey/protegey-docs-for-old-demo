@@ -1,9 +1,9 @@
 export default defineAppConfig({
     docus: {
-        title: 'Centry Documentation',
+        title: 'Protegey Documentation',
         description: 'The fraud intelligence network powered by Protegey',
 
-        url: 'https://docs.centry.ai',
+        url: 'https://docs.protegey.com',
 
         socials: {
             github: 'protegey',
@@ -11,7 +11,7 @@ export default defineAppConfig({
         },
 
         header: {
-            title: 'Centry',
+            title: 'Protegey',
             logo: true,
             showLinkIcon: true
         },
@@ -30,7 +30,7 @@ export default defineAppConfig({
         footer: {
             credits: {
                 icon: '',
-                text: '© 2026 Centry (by Protegey). All rights reserved.',
+                text: '© 2026 Protegey. All rights reserved.',
                 href: 'https://protegey.com'
             },
             textLinks: [

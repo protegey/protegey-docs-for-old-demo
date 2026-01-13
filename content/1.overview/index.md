@@ -1,17 +1,17 @@
 ---
 title: Overview
-description: Introduction to Centry/Protegey - The Fraud Intelligence Platform
+description: Introduction to Protegey/Protegey - The Fraud Intelligence Platform
 navigation:
   title: Overview
 ---
 
 # Overview
 
-Centry (powered by Protegey) is a trust-based fraud intelligence network designed for financial institutions, fintechs, and telecommunications providers.
+Protegey is a trust-based fraud intelligence network designed for financial institutions, fintechs, and telecommunications providers.
 
-## What is Centry?
+## What is Protegey?
 
-Centry is not just a fraud detection tool; it is a collaborative ecosystem. It enables trusted partners to securely share signals about high-risk entities, creating a "herd immunity" effect against fraud.
+Protegey is not just a fraud detection tool; it is a collaborative ecosystem. It enables trusted partners to securely share signals about high-risk entities, creating a "herd immunity" effect against fraud.
 
 When one partner detects a threat, the entire network is immunized.
 
@@ -19,7 +19,7 @@ When one partner detects a threat, the entire network is immunized.
 
 Our platform is built on the belief that fraud is a network problem, not an individual institution problem. Fraud actors leverage the siloed nature of the financial system to attack multiple institutions simultaneously or sequentially.
 
-Centry breaks these silos without compromising data privacy or competitive advantage.
+Protegey breaks these silos without compromising data privacy or competitive advantage.
 
 ## Key Capabilities
 
@@ -30,7 +30,7 @@ Centry breaks these silos without compromising data privacy or competitive advan
 
 ## Next Steps
 
-- [What is Centry?](/overview/what-is-centry) - Deep dive into the platform
+- [What is Protegey?](/overview/what-is-protegey) - Deep dive into the platform
 - [Core Problems](/overview/core-problems) - The challenges we solve
-- [Who Centry is For](/overview/who-centry-is-for) - Ideal partner profile
-- [Non-Use Cases](/overview/explicit-non-use-cases) - What Centry is NOT for
+- [Who Protegey is For](/overview/who-protegey-is-for) - Ideal partner profile
+- [Non-Use Cases](/overview/explicit-non-use-cases) - What Protegey is NOT for

@@ -1,13 +1,13 @@
 ---
 title: Trust & Safety
-description: How Centry protects the fraud intelligence network
+description: How Protegey protects the fraud intelligence network
 navigation:
   title: Trust & Safety
 ---
 
 # Trust & Safety
 
-Centry's trust and safety framework is designed to protect both our partners and the integrity of the fraud intelligence network. Our approach recognizes that fraud detection systems operate in a hostile environment where adversaries actively attempt to reverse engineer and exploit detection mechanisms.
+Protegey's trust and safety framework is designed to protect both our partners and the integrity of the fraud intelligence network. Our approach recognizes that fraud detection systems operate in a hostile environment where adversaries actively attempt to reverse engineer and exploit detection mechanisms.
 
 ## Core Principles
 

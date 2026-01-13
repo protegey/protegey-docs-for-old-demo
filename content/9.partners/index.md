@@ -1,6 +1,6 @@
 ---
 title: Welcome
-description: Partner documentation for Centry integration
+description: Partner documentation for Protegey integration
 navigation:
   title: Partners
 ---
@@ -8,14 +8,14 @@ navigation:
 # Partner Documentation
 
 ::callout{icon="i-lucide-shield-check" color="green"}
-This documentation is restricted to approved Centry partners.
+This documentation is restricted to approved Protegey partners.
 ::
 
-Welcome to the Centry Partner Documentation. This section provides detailed technical information for integrating with the Centry fraud intelligence platform.
+Welcome to the Protegey Partner Documentation. This section provides detailed technical information for integrating with the Protegey fraud intelligence platform.
 
 ## Partner Responsibilities
 
-As a Centry partner, you agree to:
+As a Protegey partner, you agree to:
 
 1. **Protect API credentials** and rotate keys regularly
 2. **Report suspicious activity** through designated channels
@@ -27,7 +27,7 @@ As a Centry partner, you agree to:
 
 By accessing this documentation, you acknowledge:
 
-- You have signed the Centry Partner Agreement
+- You have signed the Protegey Partner Agreement
 - You understand the acceptable use policy
 - You will not reverse engineer or exploit the platform
 - You will protect the confidentiality of technical implementation details
@@ -55,7 +55,7 @@ How to report suspicious activity and respond to security incidents.
 ## Support
 
 For technical support, contact:
-- **Email**: [support@centry.ai](mailto:support@centry.ai)
+- **Email**: [support@protegey.com](mailto:support@protegey.com)
 - **Slack**: Join your dedicated partner channel
 - **Emergency**: Use the incident escalation path
 

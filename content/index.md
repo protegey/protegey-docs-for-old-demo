@@ -1,6 +1,6 @@
 ---
 seo:
-  title: Centry - Collective Defence Against Fraud
+  title: Protegey - Collective Defence Against Fraud
   description: The fraud intelligence network for financial institutions, fintechs, and telcos. Powered by Protegey.
 ---
 
@@ -10,7 +10,7 @@ Collective Defence
 <br>Against <span class="text-primary">Fraud</span>
 
 #description
-Centry is the fraud intelligence network that enables financial institutions to securely share risk signals. Stop fighting in silos. Start fighting together.
+Protegey is the fraud intelligence network that enables financial institutions to securely share risk signals. Stop fighting in silos. Start fighting together.
 
 #links
   :::u-button
@@ -48,7 +48,7 @@ Centry is the fraud intelligence network that enables financial institutions to 
 
 ::u-page-section
 #title
-Why Centry?
+Why Protegey?
 
 #features
   :::u-page-feature
