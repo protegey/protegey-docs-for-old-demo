@@ -43,7 +43,10 @@ export default defineNuxtConfig({
         },
     },
 
-    
+    content: {
+        locales: ["en", "fr", "ar"],
+        defaultLocale: "en",
+    },
 
     future: {
         compatibilityVersion: 4,
