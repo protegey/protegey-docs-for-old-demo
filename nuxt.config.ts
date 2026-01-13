@@ -25,17 +25,25 @@ export default defineNuxtConfig({
 
     telemetry: false,
 
-    modules: ["@nuxt/content", "@nuxt/i18n"],
+    modules: ["@nuxt/content", "@nuxtjs/i18n"],
 
     i18n: {
+        langDir: "locales",
         locales: [
-            { code: "en", name: "English", file: "en.json" },
-            { code: "fr", name: "Français", file: "fr.json" },
-            { code: "ar", name: "العربية", file: "ar.json" },
+            { code: "en", name: "English", file: "en.json", language: "en-US" },
+            { code: "fr", name: "Français", file: "fr.json", language: "fr-FR" },
+            { code: "ar", name: "العربية", file: "ar.json", language: "ar-EG" },
         ],
-        defaultLocale: "fr",
-        strategy: "prefix",
+        defaultLocale: "en",
+        strategy: "prefix_except_default",
+        detectBrowserLanguage: {
+            useCookie: true,
+            cookieKey: "i18n_redirected",
+            redirectOn: "root",
+        },
     },
+
+    
 
     future: {
         compatibilityVersion: 4,

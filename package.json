@@ -11,6 +11,7 @@
     "@nuxt/eslint": "1.12.1",
     "@nuxt/fonts": "0.12.1",
     "@nuxt/hints": "1.0.0-alpha.5",
+    "@nuxtjs/i18n": "^10.2.1",
     "better-sqlite3": "^12.5.0",
     "docus": "latest",
     "eslint": "^9.0.0",
