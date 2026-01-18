@@ -1,8 +1,15 @@
 export default defineNuxtRouteMiddleware((to) => {
     const { canAccessInternalDocs, isAuthenticated } = useAuth()
 
+    // Helper to check if path starts with a prefix, accounting for locales
+    const matchesPath = (path: string, prefix: string) => {
+        const locales = ['en', 'fr', 'ar']
+        const cleanPath = path.replace(new RegExp(`^/(${locales.join('|')})`), '')
+        return cleanPath.startsWith(prefix)
+    }
+
     // Check if accessing internal documentation
-    if (to.path.startsWith('/internal')) {
+    if (matchesPath(to.path, '/internal')) {
         if (!isAuthenticated.value) {
             // Redirect to login with return URL
             return navigateTo({

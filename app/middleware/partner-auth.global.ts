@@ -8,8 +8,15 @@ export default defineNuxtRouteMiddleware((to) => {
         partnerStage
     } = useAuth()
 
+    // Helper to check if path starts with a prefix, accounting for locales
+    const matchesPath = (path: string, prefix: string) => {
+        const locales = ['en','fr', 'ar']
+        const cleanPath = path.replace(new RegExp(`^/(${locales.join('|')})`), '')
+        return cleanPath.startsWith(prefix)
+    }
+
     // Check if accessing partner documentation
-    if (to.path.startsWith('/partners')) {
+    if (matchesPath(to.path, '/partners')) {
         if (!isAuthenticated.value) {
             // Redirect to login with return URL
             return navigateTo({
@@ -28,8 +35,8 @@ export default defineNuxtRouteMiddleware((to) => {
 
         // Progressive disclosure based on partner stage
         // API Reference requires production access
-        if (to.path.startsWith('/partners/api-reference') ||
-            to.path.startsWith('/partners/4.api-reference')) {
+        if (matchesPath(to.path, '/partners/api-reference') ||
+            matchesPath(to.path, '/partners/4.api-reference')) {
             if (!canAccessApiReference.value) {
                 return abortNavigation({
                     statusCode: 403,
@@ -39,8 +46,8 @@ export default defineNuxtRouteMiddleware((to) => {
         }
 
         // Operational Guides require pre-production or live stage
-        if (to.path.startsWith('/partners/operational-guides') ||
-            to.path.startsWith('/partners/5.operational-guides')) {
+        if (matchesPath(to.path, '/partners/operational-guides') ||
+            matchesPath(to.path, '/partners/5.operational-guides')) {
             if (!canAccessOperationalGuides.value) {
                 return abortNavigation({
                     statusCode: 403,
@@ -50,9 +57,9 @@ export default defineNuxtRouteMiddleware((to) => {
         }
 
         // Sandbox docs require at least sandbox access
-        if (to.path.startsWith('/partners/sandbox') ||
-            to.path.startsWith('/partners/3.environments/2.sandbox') ||
-            to.path.startsWith('/partners/4.sandbox')) {
+        if (matchesPath(to.path, '/partners/sandbox') ||
+            matchesPath(to.path, '/partners/3.environments/2.sandbox') ||
+            matchesPath(to.path, '/partners/4.sandbox')) {
             if (!canAccessSandboxDocs.value) {
                 return abortNavigation({
                     statusCode: 403,

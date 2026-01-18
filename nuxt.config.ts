@@ -66,12 +66,7 @@ export default defineNuxtConfig({
         },
     },
 
-    // Disable SSR for protected routes to ensure middleware runs client-side
-    routeRules: {
-        "/partners/**": { ssr: false },
-        "/internal/**": { ssr: false },
-    },
-
+    // Optimization: Ensure headers are set correctly for security
     runtimeConfig: {
         public: {
             apiBase: process.env.NUXT_PUBLIC_API_BASE || "http://localhost:8000",

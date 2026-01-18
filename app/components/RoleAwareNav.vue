@@ -10,6 +10,13 @@ const {
     canAccessOperationalGuides
 } = useAuth()
 
+// Helper to check if path matches a prefix, accounting for locales
+const matchesPath = (path: string, prefix: string) => {
+    const locales = ['en', 'fr', 'ar']
+    const cleanPath = path.replace(new RegExp(`^/(${locales.join('|')})`), '')
+    return cleanPath.startsWith(prefix)
+}
+
 const filteredNavigation = computed(() => {
     if (!navigation.value) return []
 
@@ -18,23 +25,25 @@ const filteredNavigation = computed(() => {
 
 function filterTree(nodes: any[]) {
     return nodes.filter(node => {
+        const path = node._path || ''
+
         // 1. Root Level Checks
-        if (node._path === '/partners' && !canAccessPartnerDocs.value) return false
-        if (node._path === '/internal' && !isInternal.value) return false
+        if (matchesPath(path, '/partners') && !canAccessPartnerDocs.value) return false
+        if (matchesPath(path, '/internal') && !isInternal.value) return false
 
         // 2. Partner Sub-sections
-        if (node._path.includes('/partners/')) {
+        if (matchesPath(path, '/partners/')) {
             // Sandbox
-            if (node._path.includes('/sandbox') && !canAccessSandboxDocs.value) return false
+            if (path.includes('/sandbox') && !canAccessSandboxDocs.value) return false
 
             // Production
-            if (node._path.includes('/production') && !canAccessProductionDocs.value) return false
+            if (path.includes('/production') && !canAccessProductionDocs.value) return false
 
             // API Reference
-            if (node._path.includes('/api-reference') && !canAccessApiReference.value) return false
+            if (path.includes('/api-reference') && !canAccessApiReference.value) return false
 
             // Operational Guides
-            if (node._path.includes('/operational-guides') && !canAccessOperationalGuides.value) return false
+            if (path.includes('/operational-guides') && !canAccessOperationalGuides.value) return false
         }
 
         return true
