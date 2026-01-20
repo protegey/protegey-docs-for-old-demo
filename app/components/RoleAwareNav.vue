@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { inject, computed, type Ref } from 'vue'
 import { useAuth } from '../composables/useAuth'
+import { useRoute } from 'nuxt/app';
+
+const route = useRoute()
+
+const shouldRenderNavigation = computed(() => {
+  const locales = ['en', 'fr', 'ar']
+  const cleanPath = route.path.replace(
+    new RegExp(`^/(${locales.join('|')})`),
+    ''
+  )
+
+  return cleanPath !== '/'
+})
 
 const props = defineProps<{
     navigation?: any[]
@@ -67,7 +80,7 @@ function filterTree(nodes: any[]) {
 </script>
 
 <template>
-    <nav class="space-y-1">
+    <nav v-if="shouldRenderNavigation" class="space-y-1">
         <UContentNavigation :navigation="filteredNavigation" />
     </nav>
 </template>
