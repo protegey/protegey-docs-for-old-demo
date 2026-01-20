@@ -14,6 +14,7 @@ primary_region = 'lhr'
 [env]
   NODE_ENV = 'development'
   PORT = '3000'
+  NUXT_PUBLIC_API_BASE = 'https://protegey-dev.fly.dev'
 
 [http_service]
   internal_port = 3000
@@ -23,7 +24,7 @@ primary_region = 'lhr'
   min_machines_running = 1
 
 [[vm]]
-  memory = '512mb'
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 512
+  memory_mb = 1024

@@ -10,6 +10,7 @@ primary_region = 'lhr'
 [env]
   NODE_ENV = 'production'
   PORT = '3000'
+  NUXT_PUBLIC_API_BASE = 'https://protegey-dev.fly.dev'
 
 [http_service]
   internal_port = 3000
