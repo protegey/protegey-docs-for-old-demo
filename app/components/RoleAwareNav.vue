@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const { navigation } = useContent()
+import { inject, computed, type Ref } from 'vue'
+import { useAuth } from '../composables/useAuth'
+
+const props = defineProps<{
+    navigation?: any[]
+    highlight?: boolean
+}>()
+
+const injectedNavigation = inject<Ref<any[] | undefined>>('navigation')
+const navigation = computed(() => props.navigation || injectedNavigation?.value || [])
 const {
     isAuthenticated,
     isInternal,
@@ -59,6 +68,6 @@ function filterTree(nodes: any[]) {
 
 <template>
     <nav class="space-y-1">
-        <DocsAsideTree :links="filteredNavigation" />
+        <UContentNavigation :navigation="filteredNavigation" />
     </nav>
 </template>
