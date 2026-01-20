@@ -1,7 +1,7 @@
 ---
 title: Protegey - Collective Defence Against Fraud
 description: Secure fraud intelligence network for financial institutions, fintechs, and telcos.
-layout: page
+layout: default
 aside: false
 ---
 
