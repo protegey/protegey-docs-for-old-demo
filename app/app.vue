@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import type { ContentNavigationItem, PageCollections } from '@nuxt/content'
+import { computed, provide, onMounted } from 'vue'
+import { useRoute, useRouter, navigateTo, useRuntimeConfig, useAsyncData, useLazyAsyncData } from '#app'
+import { useHead, useSeoMeta } from '#imports'
+import type { ContentNavigationItem } from '@nuxt/content'
 import * as nuxtUiLocales from '@nuxt/ui/locale'
 import { useAppConfig } from 'nuxt/app'
 
@@ -14,7 +17,6 @@ const {
 const nuxtUiLocale = computed(() => nuxtUiLocales[locale.value as keyof typeof nuxtUiLocales] || nuxtUiLocales.en)
 const lang = computed(() => nuxtUiLocale.value.code)
 const dir = computed(() => nuxtUiLocale.value.dir)
-const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
 useHead({
     meta: [
@@ -55,16 +57,28 @@ if (isEnabled.value) {
     })
 }
 
-const { data: navigation } = await useAsyncData(() => `navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
+const { data: navigation } = await useAsyncData(() => `navigation_${locale.value}`, async () => {
+    const collectionName = `docs_${locale.value}`
+    const nav = await queryCollectionNavigation(collectionName as any)
+    console.log(`DEBUG: RAW NAVIGATION (${collectionName}):`, JSON.stringify(nav, null, 2))
+    return nav
+}, {
     transform: (data: ContentNavigationItem[]) => {
-        const rootResult = data.find(item => item.path === '/docs')?.children || data || []
-
-        return rootResult.find(item => item.path === `/${locale.value}`)?.children || rootResult
+        if (!data) return []
+        // With docs_en, the root is usually /en
+        const rootResult = data.find(item => item.path === `/${locale.value}`)?.children ||
+            data.find(item => item.path === locale.value)?.children ||
+            data || []
+        console.log('DEBUG: TRANSFORMED NAVIGATION:', JSON.stringify(rootResult, null, 2))
+        return rootResult
     },
     watch: [locale],
 })
 
-const { data: files } = useLazyAsyncData(`search_${collectionName.value}`, () => queryCollectionSearchSections(collectionName.value as keyof PageCollections), {
+const { data: files } = useLazyAsyncData(`search_${locale.value}`, () => {
+    const collectionName = `docs_${locale.value}`
+    return queryCollectionSearchSections(collectionName as any)
+}, {
     server: false,
     watch: [locale],
 })
