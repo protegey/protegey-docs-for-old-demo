@@ -10,24 +10,6 @@ export default defineNuxtConfig({
     telemetry: false,
 
     /* -------------------------------------------------
-     * Docus Configuration
-     * ------------------------------------------------- */
-    docus: {
-        title: 'Protegey Documentation',
-        description: 'Real-time fraud intelligence for modern infrastructure.',
-        url: 'https://docs.protegey.com',
-        socials: {
-            github: 'protegey',
-            twitter: 'protegey',
-        },
-        header: {
-            title: 'Protegey Docs',
-            logo: false,
-            showLinkIcon: true,
-        },
-    },
-
-    /* -------------------------------------------------
      * Modules
      * ------------------------------------------------- */
     modules: [
@@ -60,23 +42,8 @@ export default defineNuxtConfig({
         locales: ['en', 'fr', 'ar'],
         defaultLocale: 'en',
         documentDriven: true,
+        trailingSlash: true,
     },
-
-    /* -------------------------------------------------
-     * Canonical Routing Rules
-     * ------------------------------------------------- */
-    // routeRules: {
-    //     // Language roots (NO trailing slash)
-    //     '/': { trailingSlash: false },
-    //     '/en': { trailingSlash: false },
-    //     '/fr': { trailingSlash: false },
-    //     '/ar': { trailingSlash: false },
-    //
-    //     // All docs pages REQUIRE trailing slash
-    //     '/en/**': { trailingSlash: true },
-    //     '/fr/**': { trailingSlash: true },
-    //     '/ar/**': { trailingSlash: true },
-    // },
 
     /* -------------------------------------------------
      * Runtime Config
@@ -103,7 +70,7 @@ export default defineNuxtConfig({
                 {
                     name: 'description',
                     content:
-                        'Protegey - Real-time fraud intelligence for modern infrastructure.',
+                        'Protegey - Real-time Fraud Intelligence for Modern Infrastructure.',
                 },
             ],
         },
