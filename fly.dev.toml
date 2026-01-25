@@ -24,7 +24,6 @@ primary_region = 'lhr'
   min_machines_running = 1
 
 [[vm]]
-  memory = '1gb'
+  memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024
