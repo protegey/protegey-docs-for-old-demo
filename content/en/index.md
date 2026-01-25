@@ -1,6 +1,6 @@
 ---
-title: Protegey - Collective Defence Against Fraud
-description: Secure fraud intelligence network for financial institutions, fintechs, and telcos.
+title: Protegey – Real-Time Fraud Intelligence
+description: A real-time fraud intelligence engine enabling collective defence for financial institutions and regulators across Africa.
 layout: default
 aside: false
 ---
@@ -14,34 +14,34 @@ ui:
 Collective Defence <br />Against <span class="text-primary">Financial Fraud</span>
 
 #description
-Protegey is the privacy-preserving intelligence layer for the global financial ecosystem. Share risk signals securely, identify malicious actors instantly, and protect your institution with network-level immunity.
+Protegey is a real-time Fraud Intelligence Engine for regulated institutions across Africa. It uncovers complex transaction patterns, detects evolving fraud schemes, and enables coordinated response—before losses escalate.
 
 #links
   :::u-button
   ---
   color: primary
   size: xl
-  to: /getting-started/onboarding
+  to: /en/getting-started/onboarding
   icon: i-lucide-shield-plus
   ---
-  Join the Network
+  Request Access
   :::
 
   :::u-button
   ---
   color: white
   size: xl
-  to: /platform/architecture
+  to: /en/platform/architecture
   variant: ghost
   trailing-icon: i-lucide-arrow-right
   ---
-  How it Works
+  How It Works
   :::
 ::
 
 ::u-page-section{class="border-y border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50"}
 #title
-Modern Intelligence for Regulated Sectors
+Intelligence Built for Regulated Sectors
 
 #features
   :::u-page-feature
@@ -49,11 +49,11 @@ Modern Intelligence for Regulated Sectors
   icon: i-lucide-refresh-cw
   ---
   #title
-  Network Immunity
+  Collective Fraud Immunity
   #description
-  When a fraud pattern is identified by one partner, the entire network is immunized in <50ms. 
+  When Protegey detects a verified fraud pattern, protections propagate across the ecosystem in milliseconds—reducing exposure before attacks can spread.
   
-  [Explore our Network Effects →](/platform/network-effects){.text-primary .text-sm .font-medium}
+  [Explore Collective Intelligence →](/en/platform/network-effects){.text-primary .text-sm .font-medium}
   :::
 
   :::u-page-feature
@@ -61,11 +61,11 @@ Modern Intelligence for Regulated Sectors
   icon: i-lucide-lock
   ---
   #title
-  Zero-Knowledge Sharing
+  Privacy-Preserving Intelligence
   #description
-  Leverage advanced hashing and homomorphic encryption to share risk signals without ever exposing PII.
+  Exchange fraud signals using advanced cryptographic techniques, including hashing and privacy-preserving computation—without exposing PII or customer data.
   
-  [Security Whitepaper →](/security/principles){.text-primary .text-sm .font-medium}
+  [Security & Privacy Principles →](/en/security/principles){.text-primary .text-sm .font-medium}
   :::
 
   :::u-page-feature
@@ -73,27 +73,27 @@ Modern Intelligence for Regulated Sectors
   icon: i-lucide-bar-chart-3
   ---
   #title
-  Cross-Sector Signals
+  Cross-Sector Signal Correlation
   #description
-  Bridge the gap between Telcos and Banks. Detect SIM-swaps and synthetic IDs before they hit your ledger.
+  Correlate signals across banks, fintechs, and telcos to detect coordinated fraud—such as SIM swaps, mule networks, and synthetic identities.
   
-  [View Signal Catalog →](/api/signals){.text-primary .text-sm .font-medium}
+  [View Signal Catalog →](/en/api/signals){.text-primary .text-sm .font-medium}
   :::
 ::
 
 ::u-page-section
 #title
-A Unified Shield for the Critical Path
+Protection Across the Critical Path
 
 #description
-Integrate Protegey directly into your highest-risk flows.
+Deploy Protegey directly within your highest-risk operational and transactional flows.
 
 ::u-page-grid
   :::u-page-card
   ---
   icon: i-lucide-user-plus
-  title: Account Opening
-  description: Stop synthetic identities and "mule" accounts during the KYC/Onboarding process.
+  title: Account Opening & KYC
+  description: Detect synthetic identities, mule accounts, and coordinated onboarding abuse before accounts are activated.
   ---
   :::
 
@@ -101,15 +101,15 @@ Integrate Protegey directly into your highest-risk flows.
   ---
   icon: i-lucide-send
   title: Real-Time Payments
-  description: Score transactions against global fraud markers before funds leave the account.
+  description: Evaluate transactions against live intelligence and ecosystem-wide fraud patterns before funds are released.
   ---
   :::
 
   :::u-page-card
   ---
   icon: i-lucide-key
-  title: Authentication
-  description: Detect account takeover (ATO) by identifying high-risk device and network anomalies.
+  title: Authentication & Access
+  description: Identify account takeover attempts through device, network, and behavioral anomaly detection.
   ---
   :::
 ::
@@ -119,13 +119,13 @@ Integrate Protegey directly into your highest-risk flows.
 card: true
 ---
 #title
-Verify Your Institution
+Access the Intelligence Layer
 #description
-Protegey is a gated network. Membership is exclusively available to verified financial institutions and regulated service providers.
+Protegey operates as a gated fraud intelligence engine. Access is limited to verified financial institutions, fintechs, telcos, and regulatory bodies.
 #links
   :::u-button
   ---
-  to: /getting-started/onboarding
+  to: /en/getting-started/onboarding
   color: primary
   size: lg
   icon: i-lucide-check-circle
@@ -135,7 +135,7 @@ Protegey is a gated network. Membership is exclusively available to verified fin
   
   :::u-button
   ---
-  to: /contact
+  to: /en/contact
   color: gray
   variant: ghost
   size: lg

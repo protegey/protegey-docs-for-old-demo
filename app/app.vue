@@ -60,7 +60,6 @@ if (isEnabled.value) {
 const { data: navigation } = await useAsyncData(() => `navigation_${locale.value}`, async () => {
     const collectionName = `docs_${locale.value}`
     const nav = await queryCollectionNavigation(collectionName as any)
-    console.log(`DEBUG: RAW NAVIGATION (${collectionName}):`, JSON.stringify(nav, null, 2))
     return nav
 }, {
     transform: (data: ContentNavigationItem[]) => {
@@ -69,7 +68,6 @@ const { data: navigation } = await useAsyncData(() => `navigation_${locale.value
         const rootResult = data.find(item => item.path === `/${locale.value}`)?.children ||
             data.find(item => item.path === locale.value)?.children ||
             data || []
-        console.log('DEBUG: TRANSFORMED NAVIGATION:', JSON.stringify(rootResult, null, 2))
         return rootResult
     },
     watch: [locale],
