@@ -6,8 +6,7 @@ primary_region = 'lhr'
 
 [build]
   dockerfile = 'Dockerfile'
-  ignorefile = '../../.dockerignore'
-  context = '../../'
+
 
 [env]
   NODE_ENV = 'production'
