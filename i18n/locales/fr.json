@@ -1,3 +1,26 @@
 {
-    "title": ""
+    "navigation": {
+        "doc_portal_title": "Docs Protegey",
+        "home": "Accueil",
+        "search": "Rechercher",
+        "search_placeholder": "Rechercher dans la documentation..."
+    },
+    "common": {
+        "privacy_policy": "Politique de confidentialité",
+        "terms_of_service": "Conditions d'utilisation",
+        "all_rights_reserved": "© 2026 Protegey. Tous droits réservés.",
+        "request_access": "Demander l'accès",
+        "how_it_works": "Comment ça marche",
+        "talk_to_sales": "Contacter l'équipe commerciale",
+        "apply_for_access": "Demander l'accès"
+    },
+    "social": {
+        "link_aria": "Lien social {key}",
+        "github_repo": "Dépôt GitHub"
+    },
+    "badges": {
+        "internal": "Interne",
+        "partner": "Partenaire",
+        "public": "Public"
+    }
 }

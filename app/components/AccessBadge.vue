@@ -2,16 +2,19 @@
 import { computed } from 'vue'
 import { useAuth } from '../composables/useAuth'
 
+import { useI18n } from 'vue-i18n'
+
 const { isPartner, isInternal } = useAuth()
+const { t } = useI18n()
 
 const badges = computed(() => {
     const list = []
     if (isInternal.value) {
-        list.push({ label: 'Internal', color: 'red-100', text: 'red-800' })
+        list.push({ label: t('badges.internal'), color: 'red-100', text: 'red-800' })
     } else if (isPartner.value) {
-        list.push({ label: 'Partner', color: 'blue-100', text: 'blue-800' })
+        list.push({ label: t('badges.partner'), color: 'blue-100', text: 'blue-800' })
     } else {
-        list.push({ label: 'Public', color: 'gray-100', text: 'gray-800' })
+        list.push({ label: t('badges.public'), color: 'gray-100', text: 'gray-800' })
     }
     return list
 })

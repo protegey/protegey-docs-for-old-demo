@@ -1,3 +1,26 @@
 {
-    "title": ""
+    "navigation": {
+        "doc_portal_title": "مركزي للتوثيق",
+        "home": "الرئيسية",
+        "search": "بحث",
+        "search_placeholder": "البحث في التوثيق..."
+    },
+    "common": {
+        "privacy_policy": "سياسة الخصوصية",
+        "terms_of_service": "شروط الخدمة",
+        "all_rights_reserved": "© 2026 مركزي. جميع الحقوق محفوظة.",
+        "request_access": "طلب الوصول",
+        "how_it_works": "كيف يعمل",
+        "talk_to_sales": "التحدث مع المبيعات",
+        "apply_for_access": "التقديم للحصول على الوصول"
+    },
+    "social": {
+        "link_aria": "رابط التواصل الاجتماعي {key}",
+        "github_repo": "مستودع GitHub"
+    },
+    "badges": {
+        "internal": "داخلي",
+        "partner": "شريك",
+        "public": "عام"
+    }
 }

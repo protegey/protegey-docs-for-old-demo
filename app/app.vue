@@ -41,7 +41,7 @@ useSeoMeta({
 
 // Helper to check if path matches a prefix, accounting for locales
 const matchesPath = (path: string, prefix: string) => {
-    const localesPrefixes = ['en', 'fr', 'ar']
+    const localesPrefixes = locales.value.map(l => l.code)
     const cleanPath = path.replace(new RegExp(`^/(${localesPrefixes.join('|')})`), '')
     return cleanPath.startsWith(prefix)
 }

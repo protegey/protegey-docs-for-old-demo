@@ -1,5 +1,5 @@
 <template>
   <div class="text-sm text-muted">
-    Copyright © {{ new Date().getFullYear() }} Protegey Inc. All rights reserved.
+    {{ $t('common.all_rights_reserved') }}
   </div>
 </template>
