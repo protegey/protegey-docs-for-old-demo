@@ -4,6 +4,10 @@
 
 This is the documentation site for Protegey, built with Nuxt + Docus. It implements a three-tiered access control model to serve different audiences with appropriate levels of information.
 
+**Status**: Documentation structure and rate limiting docs complete. API reference for 30+ partner endpoints is a Phase 6 priority.
+
+**Coverage gap**: 30+ partner API endpoints (cases, alerts, entities, team, audit logs, signal ingestion) are undocumented. See the master plan for Phase 6 documentation sprint.
+
 ## 🎯 Documentation Tiers
 
 ### Public Documentation (`/`)
@@ -23,11 +27,19 @@ Restricted to approved partners with authentication required.
 
 **Sections:**
 - Authentication - API key management and security
-- Sandbox - Test environment and mock data
-- API Reference - Detailed endpoint documentation
+- Sandbox - Test environment and mock data generation (demo signals, reset)
+- API Reference - Detailed endpoint documentation *(coverage gap — Phase 6)*
 - Operational Guides - Integration checklists
-- Limits & Quotas - Rate limiting and fair use
+- Limits & Quotas - Rate limiting and fair use (Sandbox: 30/min, Production: configurable)
 - Incidents - Suspicious activity reporting
+
+**API endpoints to document (Phase 6)**:
+- Signal ingestion (UFES schema + validation errors)
+- Case management (10 endpoints)
+- Alert management + lineage (5 endpoints)
+- Entity intelligence (5 endpoints)
+- Team management (5 endpoints)
+- Audit logs, dashboard, transaction monitoring
 
 ### Internal Documentation (`/internal`)
 Restricted to Protegey team members only.
@@ -153,6 +165,15 @@ For Protegey team members:
 2. Use Docus components for callouts, alerts, and formatting
 3. Test authentication flows when adding protected content
 4. Update navigation in `app.config.ts` if adding new sections
+
+## 🗺️ What's Next
+
+**Phase 6: Documentation Refresh** (planned after Phase 4 Collaborative Intelligence)
+- Document all 30+ partner API endpoints with request/response schemas
+- Add sandbox quick-start guide with demo signal walkthrough
+- Add UFES signal schema reference
+- Add alert lineage explainability guide
+- Architecture diagrams: pipeline (Resolver → Feature → Detector → Taxonomy → Alert)
 
 ## 📄 License
 
