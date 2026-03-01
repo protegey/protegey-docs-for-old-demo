@@ -1,0 +1,23 @@
+# syntax = docker/dockerfile:1
+
+ARG NODE_VERSION=20
+FROM node:${NODE_VERSION}-alpine
+
+WORKDIR /app
+
+# Install Python and build tools for native modules
+RUN apk add --no-cache python3 make g++
+
+RUN corepack enable && corepack prepare pnpm@latest-9 --activate
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json .npmrc ./
+COPY packages/ ./packages/
+COPY apps/docs/ ./apps/docs/
+
+WORKDIR /app/apps/docs
+
+RUN pnpm install --frozen-lockfile
+
+EXPOSE 3000
+
+CMD ["pnpm", "dev", "--host", "0.0.0.0", "--port", "3000"]
