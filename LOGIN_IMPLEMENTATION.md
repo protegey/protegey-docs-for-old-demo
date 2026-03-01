@@ -42,9 +42,9 @@ Created a Nuxt plugin to initialize authentication state on app load:
 
 ```typescript
 export default defineNuxtPlugin(async () => {
-  const { initAuth } = useAuth()
-  await initAuth()
-})
+  const { initAuth } = useAuth();
+  await initAuth();
+});
 ```
 
 ## Authentication Flow
@@ -80,6 +80,7 @@ export default defineNuxtPlugin(async () => {
 ## Cookie Strategy
 
 The `partner_token` cookie is:
+
 - **Shared** between partner portal and docs site
 - **HTTP-only** for security (when set by Laravel)
 - **SameSite: lax** for cross-origin compatibility

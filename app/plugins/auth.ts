@@ -1,8 +1,8 @@
-import { useAuth } from '../composables/useAuth'
+import { useAuth } from "../composables/useAuth";
 
 export default defineNuxtPlugin(async () => {
-    const { initAuth } = useAuth()
+  const { initAuth } = useAuth();
 
-    // Initialize auth state on app load
-    await initAuth()
-})
+  // Initialize auth state on app load
+  await initAuth();
+});

@@ -35,26 +35,33 @@ By accessing this documentation, you acknowledge:
 ## Documentation Sections
 
 ### Authentication
+
 Learn how to authenticate API requests using API keys and manage credentials securely.
 
 ### Sandbox
+
 Explore the sandbox environment with test data and mock responses.
 
 ### API Reference
+
 Detailed endpoint documentation, payload schemas, and response formats.
 
 ### Operational Guides
+
 Integration checklists, monitoring, and failure handling best practices.
 
 ### Limits & Quotas
+
 Rate limits, fair use policies, and abuse detection constraints.
 
 ### Incidents
+
 How to report suspicious activity and respond to security incidents.
 
 ## Support
 
 For technical support, contact:
+
 - **Email**: [support@protegey.com](mailto:support@protegey.com)
 - **Slack**: Join your dedicated partner channel
 - **Emergency**: Use the incident escalation path
@@ -63,12 +70,12 @@ For technical support, contact:
 
 Partner API access is subject to rate limiting based on your subscription tier:
 
-| Tier | Requests/Minute | Requests/Day | Burst Limit |
-|------|----------------|--------------|-------------|
-| Sandbox | 100 | 10,000 | 150 |
-| Starter | 1,000 | 100,000 | 1,500 |
-| Professional | 5,000 | 500,000 | 7,500 |
-| Enterprise | Custom | Custom | Custom |
+| Tier         | Requests/Minute | Requests/Day | Burst Limit |
+| ------------ | --------------- | ------------ | ----------- |
+| Sandbox      | 100             | 10,000       | 150         |
+| Starter      | 1,000           | 100,000      | 1,500       |
+| Professional | 5,000           | 500,000      | 7,500       |
+| Enterprise   | Custom          | Custom       | Custom      |
 
 ::callout{icon="i-lucide-alert-triangle" color="amber"}
 Exceeding rate limits will result in `429 Too Many Requests` responses. Implement exponential backoff in your integration.
