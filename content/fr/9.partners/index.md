@@ -5,8 +5,6 @@ navigation:
   title: Partenaires
 ---
 
-# Documentation Partenaire
-
 ::callout{icon="i-lucide-shield-check" color="green"}
 Cette documentation est réservée aux partenaires approuvés de Protegey.
 ::

@@ -20,9 +20,9 @@ export default defineNuxtConfig({
   i18n: {
     langDir: "../i18n/locales",
     locales: [
-      { code: "en", name: "English", file: "en.json", language: "en-US" },
-      { code: "fr", name: "Français", file: "fr.json", language: "fr-FR" },
-      { code: "ar", name: "العربية", file: "ar.json", language: "ar-EG" },
+      { code: "en", name: "English", file: "en.json", iso: "en-US" },
+      { code: "fr", name: "Français", file: "fr.json", iso: "fr-FR" },
+      { code: "ar", name: "العربية", file: "ar.json", iso: "ar-EG" },
     ],
     defaultLocale: "en",
     strategy: "prefix",
@@ -41,6 +41,9 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     documentDriven: true,
     trailingSlash: true,
+    search: {
+      indexed: true,
+    }
   },
 
   /* -------------------------------------------------

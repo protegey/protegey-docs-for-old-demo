@@ -5,8 +5,6 @@ navigation:
   title: Partners
 ---
 
-# Partner Documentation
-
 ::callout{icon="i-lucide-shield-check" color="green"}
 This documentation is restricted to approved Protegey partners.
 ::

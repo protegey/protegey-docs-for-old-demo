@@ -5,6 +5,17 @@ export default defineAppConfig({
     title: "Protegey Documentation",
     description: "Real-time fraud intelligence for modern infrastructure.",
 
+    seo: {
+      title: "Protegey Documentation Hub",
+      description: "Real-time fraud intelligence for modern infrastructure.",
+      titleTemplate: "%s · Protegey Docs",
+    },
+
+    search: {
+      enable: true,
+      inAdvanced: true,
+    },
+
     url: "https://docs.protegey.com",
 
     socials: {

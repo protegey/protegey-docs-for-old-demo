@@ -5,8 +5,6 @@ navigation:
   title: الشركاء
 ---
 
-# توثيق الشركاء
-
 ::callout{icon="i-lucide-shield-check" color="green"}
 هذا التوثيق مقيَّد على الشركاء المعتمدين من Protegey.
 ::
