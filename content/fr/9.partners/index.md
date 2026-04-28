@@ -52,6 +52,10 @@ Listes de contrôle d'intégration, surveillance et meilleures pratiques pour la
 
 Limites de débit, politiques d'utilisation équitable et contraintes de détection des abus.
 
+### Vérification KYB
+
+Intégrez et vérifiez les clients professionnels avec des questionnaires configurables, la collecte de documents et le filtrage AML intégré. Inclut le portail candidat, le workflow d'examen partenaire et le déclenchement automatique de la Diligence Renforcée (EDD) sur les approbations à haut risque.
+
 ### Incidents
 
 Comment signaler une activité suspecte et répondre aux incidents de sécurité.

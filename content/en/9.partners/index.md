@@ -52,6 +52,10 @@ Integration checklists, monitoring, and failure handling best practices.
 
 Rate limits, fair use policies, and abuse detection constraints.
 
+### KYB Verification
+
+Onboard and verify business customers with configurable questionnaires, document collection, and integrated AML screening. Includes applicant portal, partner review workflow, and EDD auto-trigger on high-risk approvals.
+
 ### Incidents
 
 How to report suspicious activity and respond to security incidents.
