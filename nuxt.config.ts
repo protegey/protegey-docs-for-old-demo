@@ -10,6 +10,11 @@ export default defineNuxtConfig({
   telemetry: false,
 
   /* -------------------------------------------------
+   * CSS
+   * ------------------------------------------------- */
+  css: ["~/assets/css/main.css"],
+
+  /* -------------------------------------------------
    * Modules
    * ------------------------------------------------- */
   modules: ["@nuxtjs/i18n"],
@@ -40,10 +45,12 @@ export default defineNuxtConfig({
     locales: ["en", "fr", "ar"],
     defaultLocale: "en",
     documentDriven: true,
-    trailingSlash: true,
-    search: {
-      indexed: true,
-    }
+    highlight: {
+      theme: {
+        default: "github-light",
+        dark: "github-dark",
+      },
+    },
   },
 
   /* -------------------------------------------------

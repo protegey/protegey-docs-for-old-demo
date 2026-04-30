@@ -22,5 +22,103 @@
         "internal": "Internal",
         "partner": "Partner",
         "public": "Public"
+    },
+    "landing": {
+        "hero": {
+            "badge": "LIVE INTELLIGENCE",
+            "title_1": "Fraud",
+            "title_2": "Intelligence",
+            "title_accent": "Engine",
+            "description": "Real-time collective defence for regulated financial institutions across Francophone Africa. Detects, correlates, and neutralises fraud schemes before losses escalate.",
+            "terminal": {
+                "title": "PROTEGEY · SIGNAL FEED",
+                "live": "LIVE",
+                "legend": {
+                    "time": "TIME",
+                    "detector": "DETECTOR",
+                    "entity": "ENTITY",
+                    "action": "ACTION"
+                },
+                "footer": {
+                    "version": "UFES v2",
+                    "encryption": "AES-256 encrypted",
+                    "pii": "Zero PII"
+                }
+            }
+        },
+        "stats": {
+            "detection_latency": "Detection Latency",
+            "signals_month": "Signals / Month",
+            "institutions": "Institutions",
+            "uptime_sla": "Uptime SLA"
+        },
+        "features": {
+            "eyebrow": "CAPABILITY SURFACE",
+            "title": "Intelligence Built for Francophone Africa's Regulated Sectors",
+            "description": "Every capability designed for the operational and regulatory realities of Francophone African financial infrastructure — BCEAO, COBAC, and FATF-GIABA aligned.",
+            "items": {
+                "01": {
+                    "title": "Collective Fraud Immunity",
+                    "description": "When Protegey detects a verified fraud pattern, protections propagate across the ecosystem in milliseconds—reducing exposure before attacks can spread."
+                },
+                "02": {
+                    "title": "Privacy-Preserving Signals",
+                    "description": "Exchange fraud intelligence using HMAC-SHA256 hashed identifiers and encrypted entity data—zero plaintext PII ever crosses institutional boundaries."
+                },
+                "03": {
+                    "title": "Cross-Sector Correlation",
+                    "description": "Correlate signals across banks, fintechs, and telcos to surface coordinated schemes—SIM swaps, mule networks, and synthetic identity rings."
+                },
+                "04": {
+                    "title": "AML / RCaaS Compliance",
+                    "description": "FATF-aligned transaction monitoring, automated SAR drafting, sanctions + PEP screening, and configurable rule thresholds per regulatory jurisdiction."
+                },
+                "05": {
+                    "title": "Graph Intelligence Engine",
+                    "description": "Hot-graph entity links in Postgres + Redis reveal multi-hop fraud rings in sub-50ms. Shared entity intelligence without exposing raw customer data."
+                },
+                "06": {
+                    "title": "Partner KYB Onboarding",
+                    "description": "Configurable questionnaire engine, document collection, integrated risk screening, and EDD auto-trigger for high-risk business customers."
+                }
+            },
+            "learn_more": "Learn more"
+        },
+        "pipeline": {
+            "eyebrow": "SIGNAL PIPELINE",
+            "title": "From Signal to Decision in < 48ms",
+            "steps": {
+                "01": {
+                    "label": "Signal Ingestion",
+                    "sub": "UFES v2 envelope"
+                },
+                "02": {
+                    "label": "Normalisation",
+                    "sub": "UFESNormalizationService"
+                },
+                "03": {
+                    "label": "Resolver Layer",
+                    "sub": "MSISDN · Device · Geo · Time"
+                },
+                "04": {
+                    "label": "Detector Registry",
+                    "sub": "5 coded detectors"
+                },
+                "05": {
+                    "label": "Risk Fusion",
+                    "sub": "Weighted NUFSS score"
+                },
+                "06": {
+                    "label": "Policy Engine",
+                    "sub": "Explainability < 50ms"
+                }
+            },
+            "arrow": "→"
+        },
+        "cta": {
+            "eyebrow": "GATED ACCESS",
+            "title": "Access the Intelligence Layer",
+            "description": "Protegey operates as a gated fraud intelligence engine, currently focused on Francophone African markets. Access is limited to verified financial institutions, fintechs, telcos, and regulatory bodies."
+        }
     }
 }

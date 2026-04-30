@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+/* ═══════════════════════════════════════════════════════
+   Protegey emerald primary scale (hue 174, chroma 0.172)
+   Unlayered — wins over @nuxt/ui @layer theme defaults
+═══════════════════════════════════════════════════════ */
+:root {
+  --ui-color-primary-50:  oklch(0.975 0.022 174);
+  --ui-color-primary-100: oklch(0.950 0.045 174);
+  --ui-color-primary-200: oklch(0.910 0.080 174);
+  --ui-color-primary-300: oklch(0.850 0.115 174);
+  --ui-color-primary-400: oklch(0.775 0.150 174);
+  --ui-color-primary-500: oklch(0.700 0.172 174); /* #0CB99E — base */
+  --ui-color-primary-600: oklch(0.645 0.160 174);
+  --ui-color-primary-700: oklch(0.560 0.145 174);
+  --ui-color-primary-800: oklch(0.430 0.115 174);
+  --ui-color-primary-900: oklch(0.315 0.085 174);
+  --ui-color-primary-950: oklch(0.215 0.058 174);
+
+  /* Surface tokens — light mode */
+  --ui-bg:            oklch(0.972 0.004 247); /* #F4F6F8 */
+  --ui-bg-muted:      oklch(0.958 0.005 247);
+  --ui-bg-elevated:   oklch(1 0 0);
+  --ui-bg-accented:   oklch(0.965 0.042 174); /* emerald tint */
+  --ui-bg-inverted:   oklch(0.177 0.065 260); /* navy */
+
+  /* Text tokens — light mode */
+  --ui-text-dimmed:      oklch(0.673 0.020 254);
+  --ui-text-muted:       oklch(0.554 0.025 254); /* #64748B */
+  --ui-text-toned:       oklch(0.420 0.030 260);
+  --ui-text:             oklch(0.177 0.065 260); /* #0B1741 navy */
+  --ui-text-highlighted: oklch(0.120 0.050 260);
+  --ui-text-inverted:    oklch(1 0 0);
+
+  /* Border tokens — light mode */
+  --ui-border:          oklch(0.922 0.006 247); /* #E2E8F0 */
+  --ui-border-muted:    oklch(0.940 0.005 247);
+  --ui-border-accented: oklch(0.700 0.172 174); /* emerald */
+  --ui-border-inverted: oklch(0.177 0.065 260);
+
+  /* Radius — square corners matching partner portal */
+  --ui-radius: 0.25rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Dark mode overrides (deep navy base)
+═══════════════════════════════════════════════════════ */
+.dark {
+  --ui-bg:            oklch(0.145 0.040 260);
+  --ui-bg-muted:      oklch(0.200 0.055 260);
+  --ui-bg-elevated:   oklch(0.230 0.050 260);
+  --ui-bg-accented:   oklch(0.700 0.172 174 / 18%);
+  --ui-bg-inverted:   oklch(0.985 0 0);
+
+  --ui-text-dimmed:      oklch(0.420 0.030 260);
+  --ui-text-muted:       oklch(0.554 0.025 254);
+  --ui-text-toned:       oklch(0.673 0.020 254);
+  --ui-text:             oklch(0.930 0.008 247);
+  --ui-text-highlighted: oklch(1 0 0);
+  --ui-text-inverted:    oklch(0.177 0.065 260);
+
+  --ui-border:          oklch(1 0 0 / 10%);
+  --ui-border-muted:    oklch(1 0 0 / 7%);
+  --ui-border-accented: oklch(0.720 0.172 174);
+  --ui-border-inverted: oklch(1 0 0);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Base typography
+═══════════════════════════════════════════════════════ */
+:root {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+code, kbd, pre, .prose code, .prose pre {
+  font-family: 'IBM Plex Mono', 'Fira Code', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Prose content overrides (rendered markdown)
+═══════════════════════════════════════════════════════ */
+.prose {
+  --tw-prose-headings: oklch(0.177 0.065 260);
+  --tw-prose-links: oklch(0.700 0.172 174);
+  --tw-prose-code: oklch(0.177 0.065 260);
+}
+
+.dark .prose {
+  --tw-prose-headings: oklch(1 0 0);
+  --tw-prose-links: oklch(0.775 0.150 174);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Callout / alert accent strip
+═══════════════════════════════════════════════════════ */
+[class*="callout"] {
+  border-radius: 0;
+}

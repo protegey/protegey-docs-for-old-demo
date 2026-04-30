@@ -104,7 +104,7 @@ export const useAuth = () => {
    * Granular access control
    */
   const canAccessPartnerDocs = computed(() => {
-    return isPartner.value || isInternal.value;
+    return true; // Public access
   });
 
   const canAccessInternalDocs = computed(() => {
@@ -112,24 +112,19 @@ export const useAuth = () => {
   });
 
   const canAccessSandboxDocs = computed(() => {
-    return hasSandboxAccess.value;
+    return true; // Public access
   });
 
   const canAccessProductionDocs = computed(() => {
-    return hasProductionAccess.value;
+    return true; // Public access
   });
 
   const canAccessApiReference = computed(() => {
-    // API reference requires production access
-    return hasProductionAccess.value;
+    return true; // Public access
   });
 
   const canAccessOperationalGuides = computed(() => {
-    // Operational guides require at least pre-production stage
-    if (isInternal.value) return true;
-    if (!isPartner.value) return false;
-    const stage = partnerStage.value;
-    return stage === "pre-production" || stage === "live";
+    return true; // Public access
   });
 
   /**

@@ -22,5 +22,103 @@
         "internal": "Interne",
         "partner": "Partenaire",
         "public": "Public"
+    },
+    "landing": {
+        "hero": {
+            "badge": "INTELLIGENCE EN DIRECT",
+            "title_1": "Moteur",
+            "title_2": "d'Intelligence",
+            "title_accent": "Fraude",
+            "description": "Défense collective en temps réel pour les institutions financières réglementées d'Afrique francophone. Détecte, corrèle et neutralise les stratagèmes de fraude avant que les pertes ne s'aggravent.",
+            "terminal": {
+                "title": "PROTEGEY · FLUX DE SIGNAUX",
+                "live": "EN DIRECT",
+                "legend": {
+                    "time": "HEURE",
+                    "detector": "DÉTECTEUR",
+                    "entity": "ENTITÉ",
+                    "action": "ACTION"
+                },
+                "footer": {
+                    "version": "UFES v2",
+                    "encryption": "Chiffré AES-256",
+                    "pii": "Zéro PII"
+                }
+            }
+        },
+        "stats": {
+            "detection_latency": "Latence de Détection",
+            "signals_month": "Signaux / Mois",
+            "institutions": "Institutions",
+            "uptime_sla": "SLA de Disponibilité"
+        },
+        "features": {
+            "eyebrow": "SURFACE DE CAPACITÉ",
+            "title": "Intelligence conçue pour les secteurs réglementés d'Afrique francophone",
+            "description": "Chaque capacité est conçue pour les réalités opérationnelles et réglementaires de l'infrastructure financière d'Afrique francophone — alignée BCEAO, COBAC et FATF-GIABA.",
+            "items": {
+                "01": {
+                    "title": "Immunité Collective contre la Fraude",
+                    "description": "Lorsque Protegey détecte un modèle de fraude vérifié, les protections se propagent dans l'écosystème en quelques millisecondes — réduisant l'exposition avant que les attaques ne puissent se propager."
+                },
+                "02": {
+                    "title": "Signaux préservant la vie privée",
+                    "description": "Échangez des renseignements sur la fraude à l'aide d'identifiants hachés HMAC-SHA256 et de données d'entité cryptées — aucune information personnelle en clair ne franchit jamais les frontières institutionnelles."
+                },
+                "03": {
+                    "title": "Corrélation intersectorielle",
+                    "description": "Corrélez les signaux entre les banques, les fintechs et les opérateurs télécoms pour faire surface aux stratagèmes coordonnés — échanges de cartes SIM, réseaux de mules et cercles d'identité synthétique."
+                },
+                "04": {
+                    "title": "Conformité AML / RCaaS",
+                    "description": "Surveillance des transactions alignée sur le GAFI, rédaction automatisée de SAR, filtrage des sanctions + PEP, et seuils de règles configurables par juridiction réglementaire."
+                },
+                "05": {
+                    "title": "Moteur d'Intelligence Graphique",
+                    "description": "Les liens d'entités en temps réel dans Postgres + Redis révèlent des réseaux de fraude multi-sauts en moins de 50 ms. Intelligence d'entité partagée sans exposer les données brutes des clients."
+                },
+                "06": {
+                    "title": "Intégration KYB des Partenaires",
+                    "description": "Moteur de questionnaire configurable, collecte de documents, filtrage des risques intégré et déclenchement automatique de l'EDD pour les clients professionnels à haut risque."
+                }
+            },
+            "learn_more": "En savoir plus"
+        },
+        "pipeline": {
+            "eyebrow": "PIPELINE DE SIGNAUX",
+            "title": "Du signal à la décision en < 48ms",
+            "steps": {
+                "01": {
+                    "label": "Ingestion de Signaux",
+                    "sub": "Enveloppe UFES v2"
+                },
+                "02": {
+                    "label": "Normalisation",
+                    "sub": "UFESNormalizationService"
+                },
+                "03": {
+                    "label": "Couche de Résolution",
+                    "sub": "MSISDN · Appareil · Géo · Heure"
+                },
+                "04": {
+                    "label": "Registre des Détecteurs",
+                    "sub": "5 détecteurs codés"
+                },
+                "05": {
+                    "label": "Fusion des Risques",
+                    "sub": "Score NUFSS pondéré"
+                },
+                "06": {
+                    "label": "Moteur de Politique",
+                    "sub": "Explicabilité < 50ms"
+                }
+            },
+            "arrow": "→"
+        },
+        "cta": {
+            "eyebrow": "ACCÈS RÉSERVÉ",
+            "title": "Accédez à la couche d'intelligence",
+            "description": "Protegey fonctionne comme un moteur d'intelligence sur la fraude à accès restreint, actuellement centré sur les marchés d'Afrique francophone. L'accès est limité aux institutions financières vérifiées, aux fintechs, aux opérateurs télécoms et aux organismes de réglementation."
+        }
     }
 }
