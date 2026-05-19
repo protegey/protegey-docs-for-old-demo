@@ -3,21 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt dev --extends docus",
-    "build": "nuxt build --extends docus"
+    "dev": "nuxt dev",
+    "build": "nuxt build"
   },
   "dependencies": {
     "@nuxt/a11y": "1.0.0-alpha.1",
-    "@nuxt/content": "^3.11.0",
+    "@nuxt/content": "3.13.0",
     "@nuxt/eslint": "1.12.1",
     "@nuxt/fonts": "0.12.1",
     "@nuxt/hints": "1.0.0-alpha.5",
+    "@nuxt/ui": "^4.7.1",
     "@nuxtjs/i18n": "^10.2.1",
     "better-sqlite3": "^12.5.0",
-    "docus": "latest",
     "eslint": "^9.0.0",
     "lucide-vue-next": "^0.468.0",
-    "nuxt": "^4.2.2"
+    "nuxt": "^4.2.2",
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.25.0"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

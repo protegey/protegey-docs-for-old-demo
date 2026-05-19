@@ -1,12 +1,14 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  extends: ["docus"],
+  compatibilityDate: "2024-11-01",
+  future: {
+    compatibilityVersion: 4,
+  },
 
   /* -------------------------------------------------
    * App Structure
    * ------------------------------------------------- */
-  compatibilityDate: "2024-11-01",
   telemetry: false,
 
   /* -------------------------------------------------
@@ -17,7 +19,7 @@ export default defineNuxtConfig({
   /* -------------------------------------------------
    * Modules
    * ------------------------------------------------- */
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxt/content", "@nuxtjs/i18n"],
 
   /* -------------------------------------------------
    * Internationalization
@@ -93,12 +95,5 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/site.webmanifest" },
       ],
     },
-  },
-
-  /* -------------------------------------------------
-   * Future Compatibility
-   * ------------------------------------------------- */
-  future: {
-    compatibilityVersion: 4,
   },
 });
