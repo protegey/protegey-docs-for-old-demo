@@ -5,6 +5,10 @@ navigation:
   title: SDK RFC v1
 ---
 
+::callout{type="info"}
+**Implementation status**: The Node.js SDK (`@protegey/sdk`) is published on npm in beta and covers signal ingestion, entity queries, case management, and compliance endpoints. The full monorepo package split described in Section 4 reflects the long-term architecture; the beta package consolidates `@protegey/server` + `@protegey/core` into a single entry point while the split is stabilised.
+::
+
 # SDK RFC v1
 
 ## 1) Purpose & Scope
