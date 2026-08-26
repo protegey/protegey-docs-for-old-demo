@@ -1,12 +1,12 @@
 # syntax = docker/dockerfile:experimental
 
-ARG NODE_VERSION=20
+ARG NODE_VERSION=24
 FROM node:${NODE_VERSION}-alpine AS builder
 
 WORKDIR /app
 
 # Enable pnpm
-RUN corepack enable && corepack prepare pnpm@latest-9 --activate
+RUN corepack enable && corepack prepare pnpm@11.1.2 --activate
 
 # Copy manifest files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json .npmrc ./

@@ -1,0 +1,11 @@
+# Dépôt autonome (extrait du monorepo protegey-core-v2).
+# Ces autorisations de build vivaient à la racine du monorepo : sans elles,
+# pnpm 11 refuse d'exécuter les scripts post-install et l'installation échoue
+# avec ERR_PNPM_IGNORED_BUILDS.
+allowBuilds:
+  esbuild: true
+  vue-demi: true
+  '@parcel/watcher': true
+  sharp: true
+  unrs-resolver: true
+  better-sqlite3: true

@@ -1,5 +1,5 @@
 {
-  "name": "@centry/docs",
+  "name": "protegey-docs",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -23,5 +23,6 @@
   },
   "devDependencies": {
     "typescript": "^5.9.3"
-  }
+  },
+  "packageManager": "pnpm@11.1.2"
 }

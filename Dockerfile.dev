@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1
 
-ARG NODE_VERSION=20
+ARG NODE_VERSION=24
 FROM node:${NODE_VERSION}-alpine
 
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 # Install Python and build tools for native modules
 RUN apk add --no-cache python3 make g++
 
-RUN corepack enable && corepack prepare pnpm@latest-9 --activate
+RUN corepack enable && corepack prepare pnpm@11.1.2 --activate
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json .npmrc ./
 COPY packages/ ./packages/
