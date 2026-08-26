@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { inject, computed, type Ref } from 'vue'
 import { useAuth } from '../composables/useAuth'
-import { useRoute } from 'nuxt/app';
 
 const route = useRoute()
 
@@ -47,7 +46,7 @@ const filteredNavigation = computed(() => {
 
 function filterTree(nodes: any[]) {
     return nodes.filter(node => {
-        const path = node._path || ''
+        const path = node.path || node._path || ''
 
         // 1. Root Level Checks
         if (matchesPath(path, '/partners') && !canAccessPartnerDocs.value) return false

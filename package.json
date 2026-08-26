@@ -22,7 +22,12 @@
     "zod-to-json-schema": "^3.25.0"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.126",
+    "@iconify-json/simple-icons": "^1.2.93",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@11.1.2",
+  "engines": {
+    "node": "22.x"
+  }
 }

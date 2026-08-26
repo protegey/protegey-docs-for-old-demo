@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import appConfig from '../../app.config';
-</script>
-
 <!-- Create the AppHeaderLogo.vue component -->
 <template>
   <img src="/logo-dark.svg" alt="Protegey" class="h-7 w-auto shrink-0 dark:hidden" />

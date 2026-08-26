@@ -1,14 +1,20 @@
 <script setup lang="ts">
-const route = useRoute()
-const locale = route.params.lang || 'en'
+
+const route = useRoute();
+const { locale } = useI18n();
+
+const { data: page } = await useAsyncData(
+  () => `landing_page_${locale.value}`,
+  () =>
+    queryCollection(`landing_${locale.value}` as any)
+      .path(route.path)
+      .first(),
+  { watch: [locale] },
+);
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-4">Protegey Documentation</h1>
-      <p class="text-gray-600 mb-4">Language: {{ locale }}</p>
-      <p>Welcome to the Protegey documentation.</p>
-    </div>
-  </div>
+  <UMain>
+    <ContentRenderer v-if="page" :value="page" />
+  </UMain>
 </template>

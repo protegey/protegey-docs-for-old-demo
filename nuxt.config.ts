@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   /* -------------------------------------------------
    * Modules
    * ------------------------------------------------- */
-  modules: ["@nuxt/content", "@nuxtjs/i18n"],
+  modules: ["@nuxt/ui", "@nuxt/content", "@nuxtjs/i18n"],
 
   /* -------------------------------------------------
    * Internationalization
@@ -44,9 +44,6 @@ export default defineNuxtConfig({
    * Nuxt Content
    * ------------------------------------------------- */
   content: {
-    locales: ["en", "fr", "ar"],
-    defaultLocale: "en",
-    documentDriven: true,
     highlight: {
       theme: {
         default: "github-light",

@@ -35,3 +35,6 @@ logs
 #VSC
 .history
 .wrangler
+
+# Vercel build output
+.vercel

@@ -1,21 +1,10 @@
 <script setup lang="ts">
-import { computed, provide, onMounted } from "vue";
-import {
-  useRoute,
-  useRouter,
-  navigateTo,
-  useRuntimeConfig,
-  useAsyncData,
-  useLazyAsyncData,
-} from "#app";
-import { useHead, useSeoMeta } from "#imports";
+import { computed, provide } from "vue";
 import type { ContentNavigationItem } from "@nuxt/content";
 import * as nuxtUiLocales from "@nuxt/ui/locale";
-import { useAppConfig } from "nuxt/app";
 
-const { seo } = useAppConfig();
-const site = useSiteConfig();
-const { locale, locales, isEnabled, switchLocalePath } = useDocusI18n();
+const appConfig = useAppConfig() as any;
+const { locale, locales } = useI18n();
 const { canAccessPartnerDocs, isInternal } = useAuth();
 
 const nuxtUiLocale = computed(
@@ -36,65 +25,42 @@ useHead({
 });
 
 useSeoMeta({
-  titleTemplate: seo.titleTemplate,
-  title: seo.title,
-  description: seo.description,
-  ogSiteName: site.name,
+  titleTemplate: appConfig.seo?.titleTemplate,
+  title: appConfig.seo?.title,
+  description: appConfig.seo?.description,
+  ogSiteName: appConfig.title,
   twitterCard: "summary_large_image",
 });
 
 // Helper to check if path matches a prefix, accounting for locales
 const matchesPath = (path: string, prefix: string) => {
-  const localesArr = Array.isArray(locales) ? locales : (locales as any).value ?? [];
-  const localesPrefixes = (localesArr as Array<{ code: string }>).map((l) => l.code);
+  const localePrefixes = (locales.value || []).map((l: any) => l.code);
   const cleanPath = path.replace(
-    new RegExp(`^/(${localesPrefixes.join("|")})`),
+    new RegExp(`^/(${localePrefixes.join("|")})`),
     "",
   );
   return cleanPath.startsWith(prefix);
 };
 
-if (isEnabled.value) {
-  const route = useRoute();
-  const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale!;
-  onMounted(() => {
-    const currentLocale = route.path.split("/")[1];
-    if (!locales.some((locale: { code: string }) => locale.code === currentLocale)) {
-      return navigateTo(switchLocalePath(defaultLocale as "en" | "fr" | "ar") as string);
-    }
-  });
-}
-
 const { data: navigation } = await useAsyncData(
   () => `navigation_${locale.value}`,
-  async () => {
-    const collectionName = `docs_${locale.value}`;
-    const nav = await queryCollectionNavigation(collectionName as any);
-    return nav;
-  },
+  () => queryCollectionNavigation(`docs_${locale.value}` as any),
   {
     transform: (data: ContentNavigationItem[]) => {
       if (!data) return [];
-      // With docs_en, the root is usually /en
-      const rootResult =
-        data.find((item) => item.path === `/${locale.value}`)?.children ||
-        data.find((item) => item.path === locale.value)?.children ||
-        data ||
-        [];
-      return rootResult;
+      // Collections are rooted at /<locale>, unwrap that level
+      return data.find((item) => item.path === `/${locale.value}`)?.children || data;
     },
     watch: [locale],
   },
 );
 
 const { data: files } = useLazyAsyncData(
-  `search_${locale.value}`,
+  () => `search_${locale.value}`,
   async () => {
-    const docsCollection = `docs_${locale.value}`;
-    const landingCollection = `landing_${locale.value}`;
     const [docs, landing] = await Promise.all([
-      queryCollectionSearchSections(docsCollection as any),
-      queryCollectionSearchSections(landingCollection as any),
+      queryCollectionSearchSections(`docs_${locale.value}` as any),
+      queryCollectionSearchSections(`landing_${locale.value}` as any),
     ]);
     return [...(docs || []), ...(landing || [])];
   },
@@ -109,7 +75,7 @@ const filteredFiles = computed(() => {
   if (!files.value) return [];
 
   return files.value.filter((file: any) => {
-    const path = file.id || file.path || file._path || "";
+    const path = file.id || file.path || "";
     if (matchesPath(path, "/partners") && !canAccessPartnerDocs.value)
       return false;
     if (matchesPath(path, "/internal") && !isInternal.value) return false;
