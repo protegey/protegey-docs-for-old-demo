@@ -26,9 +26,18 @@
     "landing": {
         "hero": {
             "badge": "INTELLIGENCE EN DIRECT",
-            "title_1": "Plateforme",
-            "title_2": "d'Analyse",
-            "title_accent": "Fraude",
+            "titles": [
+                "Noyau de Détection des Fraudes",
+                "Système d'Intelligence des Risques",
+                "Plateforme d'Analyse des Fraudes",
+                "Moteur de Détection d'Anomalies",
+                "Moteur d'Intelligence Sécuritaire",
+                "Suite de Prévention des Fraudes",
+                "Moteur de Risque Comportemental",
+                "Moniteur de Conformité Pro",
+                "Système de Bouclier Anti-Fraude",
+                "Noyau de Risque Prédictif"
+            ],
             "description": "Défense collective en temps réel pour les institutions financières réglementées d'Afrique francophone. Détecte, corrèle et neutralise les stratagèmes de fraude avant que les pertes ne s'aggravent.",
             "terminal": {
                 "title": "PROTEGEY · FLUX DE SIGNAUX",

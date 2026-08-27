@@ -1,10 +1,74 @@
 <script setup lang="ts">
 
 const localePath = useLocalePath();
-const { t } = useI18n();
+const { t, tm, rt } = useI18n();
+
+/* ─── Hero headline: typewriter cycling through the taglines ─── */
+const heroTitles = computed<string[]>(() => (tm('landing.hero.titles') as unknown[]).map(m => rt(m as never)));
+
+const typedLength = ref(heroTitles.value[0]?.length ?? 0);
+const titleIndex = ref(0);
+
+const currentTitle = computed(() => heroTitles.value[titleIndex.value] ?? '');
+const typed = computed(() => currentTitle.value.slice(0, typedLength.value));
+/* Last word stays in the accent colour while it is being typed. */
+const accentStart = computed(() => {
+  const space = currentTitle.value.lastIndexOf(' ');
+  return space === -1 ? 0 : space + 1;
+});
+const typedHead = computed(() => typed.value.slice(0, accentStart.value));
+const typedAccent = computed(() => typed.value.slice(accentStart.value));
+/* Rendered invisibly behind the typed text so the block never changes height. */
+const longestTitle = computed(() => heroTitles.value.reduce((a, b) => (b.length > a.length ? b : a), ''));
+
+const TYPE_MS = 65;
+const ERASE_MS = 30;
+const HOLD_MS = 2000;
+const NEXT_MS = 400;
+
+let timer: ReturnType<typeof setTimeout> | undefined;
+let erasing = false;
+
+function schedule(delay: number) {
+  timer = setTimeout(step, delay);
+}
+
+function step() {
+  const full = currentTitle.value;
+
+  if (!erasing) {
+    if (typedLength.value < full.length) {
+      typedLength.value += 1;
+      schedule(TYPE_MS);
+    }
+    else {
+      erasing = true;
+      schedule(HOLD_MS);
+    }
+    return;
+  }
+
+  if (typedLength.value > 0) {
+    typedLength.value -= 1;
+    schedule(ERASE_MS);
+  }
+  else {
+    erasing = false;
+    titleIndex.value = (titleIndex.value + 1) % heroTitles.value.length;
+    schedule(NEXT_MS);
+  }
+}
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  erasing = true;
+  schedule(HOLD_MS);
+});
+
+onBeforeUnmount(() => clearTimeout(timer));
 
 useSeoMeta({
-  title: t('landing.hero.title_1') + ' ' + t('landing.hero.title_2') + ' ' + t('landing.hero.title_accent'),
+  title: () => heroTitles.value[0] ?? '',
   description: t('landing.hero.description'),
 });
 
@@ -95,10 +159,9 @@ const features = [
             <span class="live-text">{{ $t('landing.hero.badge') }}</span>
           </div>
 
-          <h1 class="hero-title">
-            {{ $t('landing.hero.title_1') }}<br>
-            {{ $t('landing.hero.title_2') }}<br>
-            <span class="hero-accent">{{ $t('landing.hero.title_accent') }}</span>
+          <h1 class="hero-title" :aria-label="currentTitle">
+            <span class="hero-title-ghost" aria-hidden="true">{{ longestTitle }}</span>
+            <span class="hero-title-typed" aria-hidden="true">{{ typedHead }}<span class="hero-accent">{{ typedAccent }}</span><span class="hero-caret" /></span>
           </h1>
 
           <p class="hero-desc">
@@ -321,6 +384,36 @@ const features = [
   letter-spacing: -0.02em;
   color: oklch(1 0 0);
   margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* The longest tagline holds the block's height; the typed one sits on top. */
+.hero-title-ghost {
+  visibility: hidden;
+}
+
+.hero-title-typed {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.95em;
+  margin-left: 0.08em;
+  vertical-align: text-bottom;
+  background: oklch(0.700 0.172 174);
+  animation: hero-caret-blink 1s steps(1) infinite;
+}
+
+@keyframes hero-caret-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-caret { animation: none; }
 }
 
 .hero-accent {

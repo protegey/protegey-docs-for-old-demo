@@ -26,9 +26,18 @@
     "landing": {
         "hero": {
             "badge": "LIVE INTELLIGENCE",
-            "title_1": "Fraud",
-            "title_2": "Analytics",
-            "title_accent": "Platform",
+            "titles": [
+                "Fraud Detection Core",
+                "Risk Intelligence System",
+                "Fraud Analytics Platform",
+                "Anomaly Detection Engine",
+                "Security Insight Engine",
+                "Fraud Prevention Suite",
+                "Behavioral Risk Engine",
+                "Compliance Monitor Pro",
+                "Fraud Shield System",
+                "Predictive Risk Core"
+            ],
             "description": "Real-time collective defence for regulated financial institutions across Francophone Africa. Detects, correlates, and neutralises fraud schemes before losses escalate.",
             "terminal": {
                 "title": "PROTEGEY · SIGNAL FEED",
