@@ -1,7 +1,7 @@
 {
   "name": "Protegey",
   "short_name": "Protegey",
-  "description": "Real-time Fraud Intelligence for Francophone African Financial Infrastructure",
+  "description": "Real-time Fraud Intelligence for African Financial Infrastructure",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#0B1741",
