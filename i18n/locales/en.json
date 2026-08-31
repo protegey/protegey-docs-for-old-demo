@@ -38,7 +38,7 @@
                 "Fraud Shield System",
                 "Predictive Risk Core"
             ],
-            "description": "Real-time collective defence for regulated financial institutions across Francophone Africa. Detects, correlates, and neutralises fraud schemes before losses escalate.",
+            "description": "Real-time collective defence for regulated financial institutions across Africa. Detects, correlates, and neutralises fraud schemes before losses escalate.",
             "terminal": {
                 "title": "PROTEGEY · SIGNAL FEED",
                 "live": "LIVE",
@@ -63,8 +63,8 @@
         },
         "features": {
             "eyebrow": "CAPABILITY SURFACE",
-            "title": "Intelligence Built for Francophone Africa's Regulated Sectors",
-            "description": "Every capability designed for the operational and regulatory realities of Francophone African financial infrastructure — BCEAO, COBAC, and FATF-GIABA aligned.",
+            "title": "Intelligence Built for Africa's Regulated Sectors",
+            "description": "Every capability designed for the operational and regulatory realities of African financial infrastructure — BCEAO, COBAC, and FATF-GIABA aligned.",
             "items": {
                 "01": {
                     "title": "Collective Fraud Immunity",
@@ -127,7 +127,7 @@
         "cta": {
             "eyebrow": "GATED ACCESS",
             "title": "Access the Intelligence Layer",
-            "description": "Protegey operates as a gated fraud intelligence engine, currently focused on Francophone African markets. Access is limited to verified financial institutions, fintechs, telcos, and regulatory bodies."
+            "description": "Protegey operates as a gated fraud intelligence engine, currently focused on African markets. Access is limited to verified financial institutions, fintechs, telcos, and regulatory bodies."
         }
     }
 }

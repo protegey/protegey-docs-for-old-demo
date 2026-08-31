@@ -38,7 +38,7 @@
                 "Système de Bouclier Anti-Fraude",
                 "Noyau de Risque Prédictif"
             ],
-            "description": "Défense collective en temps réel pour les institutions financières réglementées d'Afrique francophone. Détecte, corrèle et neutralise les stratagèmes de fraude avant que les pertes ne s'aggravent.",
+            "description": "Défense collective en temps réel pour les institutions financières réglementées d'Afrique. Détecte, corrèle et neutralise les stratagèmes de fraude avant que les pertes ne s'aggravent.",
             "terminal": {
                 "title": "PROTEGEY · FLUX DE SIGNAUX",
                 "live": "EN DIRECT",
@@ -63,8 +63,8 @@
         },
         "features": {
             "eyebrow": "SURFACE DE CAPACITÉ",
-            "title": "Intelligence conçue pour les secteurs réglementés d'Afrique francophone",
-            "description": "Chaque capacité est conçue pour les réalités opérationnelles et réglementaires de l'infrastructure financière d'Afrique francophone — alignée BCEAO, COBAC et FATF-GIABA.",
+            "title": "Intelligence conçue pour les secteurs réglementés d'Afrique",
+            "description": "Chaque capacité est conçue pour les réalités opérationnelles et réglementaires de l'infrastructure financière d'Afrique — alignée BCEAO, COBAC et FATF-GIABA.",
             "items": {
                 "01": {
                     "title": "Immunité Collective contre la Fraude",
@@ -127,7 +127,7 @@
         "cta": {
             "eyebrow": "ACCÈS RÉSERVÉ",
             "title": "Accédez à la couche d'intelligence",
-            "description": "Protegey fonctionne comme un moteur d'intelligence sur la fraude à accès restreint, actuellement centré sur les marchés d'Afrique francophone. L'accès est limité aux institutions financières vérifiées, aux fintechs, aux opérateurs télécoms et aux organismes de réglementation."
+            "description": "Protegey fonctionne comme un moteur d'intelligence sur la fraude à accès restreint, actuellement centré sur les marchés d'Afrique. L'accès est limité aux institutions financières vérifiées, aux fintechs, aux opérateurs télécoms et aux organismes de réglementation."
         }
     }
 }
